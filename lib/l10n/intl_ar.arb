@@ -1,0 +1,63 @@
+{
+  "head_title": "احجز تذكرتك",
+  "from": "من",
+  "to": "إلى",
+  "from_title":"حدد مدينة السفر",
+  "to_title": "حدد مدينة الوجهة",
+  "number_of_set_title":"عدد المقاعد",
+  "travel_date": "تاريخ السفر",
+  "show_trip": "أعرض الرحلات",
+  "Select_travel_city":"أختار مدينة السفر",
+  "Select_travel_arrive":"أختار محطة الوصول",
+  "done":"تأكيد",
+  "select_date": "أختار التاريخ",
+  "reservation": "حجز",
+   "sets_title":"من فضلك اختر المقعد / المقاعد",
+  "selected_seats": "المقاعد المختارة",
+  "reserved_seats": "المقاعد المحجوزة",
+  "available_seats": "المقاعد المتاحة",
+  "book_now": "احجز الآن",
+  "login_account": "دخول حساب",
+  "logout": "تسجيل الخروج",
+  "remaining_chairs": "كراسي متبقية",
+  "tickets": "تذاكر",
+  "email": "البريد الإلكتروني",
+  "password": "كلمة السر",
+  "confirm_password": "تأكيد كلمة السر",
+  "name": "الإسم بالكامل",
+  "login": "دخول",
+  "register_new_acc": "تسجيل حساب جديد بالإيميل",
+  "register":"تسجيل",
+  "name_required": "الاسم مطلوب",
+  "name_too_short": "يجب أن يكون الاسم 4 أحرف على الأقل",
+  "name_too_long": "يجب أن يكون الاسم أقل من 50 حرفًا",
+  "email_required": "البريد الإلكتروني مطلوب",
+  "invalid_email": "يرجى إدخال بريد إلكتروني صالح",
+  "password_required": "كلمة المرور مطلوبة",
+  "password_too_short": "يجب أن تكون كلمة المرور 6 أحرف على الأقل",
+  "confirm_password_required": "تأكيد كلمة المرور مطلوب",
+  "passwords_do_not_match": "كلمات المرور غير متطابقة",
+  "not_found_trip": "لا يوجد رحلات في المحطة المختارة",
+  "back": "الرجوع",
+  "about_us": "عن الشركة",
+  "private_trips": "رحلات خاصة",
+  "Cities_Stations": "المدن والمحطات",
+  "contact_us": "تواصل معنا",
+  "privacy_policy": "سياسة الخصوصية",
+  "terms_conditions": "الشروط والأحكام",
+  "edit_account_info": "تعديل بيانات الحساب",
+  "edit_password": "تعديل كلمة السر",
+  "save": "حفظ",
+  "old_pass":"كلمة المرور الحالية",
+  "new_pass":"كلمة المرور الجديدة",
+  "confirm_new_pass":"تأكيد كلمة المرور الجديدة"
+
+
+
+
+
+
+
+
+
+}
