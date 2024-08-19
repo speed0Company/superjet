@@ -4,10 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:superjet/colors/style_color.dart';
 import 'package:superjet/generated/l10n.dart';
-
 import '../../widgets/custom_button.dart';
 import '../../widgets/custome_text_filed.dart';
-
 import 'create_account_screen.dart';
 
 class LoginScreen extends StatelessWidget {
