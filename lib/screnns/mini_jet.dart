@@ -138,6 +138,7 @@ class _MiniJetScreenState extends State<MiniJetScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
+
         slivers: [
 
           SliverPersistentHeader(
@@ -152,7 +153,7 @@ class _MiniJetScreenState extends State<MiniJetScreen> {
             child: Form(
               key: _formKey,
               child: Padding(
-                padding: const EdgeInsets.all(30.0),
+                padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -165,7 +166,7 @@ class _MiniJetScreenState extends State<MiniJetScreen> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal:5.0,vertical: 15 ),
+                      padding: const EdgeInsets.symmetric(horizontal:5.0,vertical: 10 ),
                       child: TextFormField(
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -522,6 +523,8 @@ class _MiniJetScreenState extends State<MiniJetScreen> {
                         ),
                       ),
                     ),
+                    SizedBox(height: 10.h),
+
                   ],
                 ),
               ),
