@@ -33,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Available seats"),
         "back": MessageLookupByLibrary.simpleMessage("back"),
         "book_now": MessageLookupByLibrary.simpleMessage("Book Now"),
+        "chose_car": MessageLookupByLibrary.simpleMessage("Chose Car"),
         "confirm_new_pass":
             MessageLookupByLibrary.simpleMessage("Confirm New Password"),
         "confirm_password":
@@ -47,6 +48,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "email_required":
             MessageLookupByLibrary.simpleMessage("Email is required"),
+        "error_form_filed_name":
+            MessageLookupByLibrary.simpleMessage("Please enter your name"),
+        "error_form_filed_phone_number": MessageLookupByLibrary.simpleMessage(
+            "Please enter your phone number"),
         "from": MessageLookupByLibrary.simpleMessage("From"),
         "from_title":
             MessageLookupByLibrary.simpleMessage("Select Travel City"),
@@ -56,6 +61,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "login_account": MessageLookupByLibrary.simpleMessage("Login Account"),
         "logout": MessageLookupByLibrary.simpleMessage("Log Out"),
+        "mini_jet": MessageLookupByLibrary.simpleMessage("Mini Jet"),
+        "mini_jet_title":
+            MessageLookupByLibrary.simpleMessage("Book your own trip"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "name_required":
             MessageLookupByLibrary.simpleMessage("Name is required"),
@@ -76,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Password should be at least 6 characters"),
         "passwords_do_not_match":
             MessageLookupByLibrary.simpleMessage("Passwords do not match"),
+        "phone_number": MessageLookupByLibrary.simpleMessage("phone number"),
         "privacy_policy":
             MessageLookupByLibrary.simpleMessage("Privacy Policy"),
         "private_trips": MessageLookupByLibrary.simpleMessage("Private Trips"),
@@ -87,6 +96,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "reserved_seats":
             MessageLookupByLibrary.simpleMessage("Reserved Seats"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
+        "search_for_private_trip":
+            MessageLookupByLibrary.simpleMessage("Search for a trip"),
         "select_date": MessageLookupByLibrary.simpleMessage("Select Date"),
         "selected_seats":
             MessageLookupByLibrary.simpleMessage("Selected Seats"),
@@ -97,8 +108,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Terms and Conditions"),
         "tickets": MessageLookupByLibrary.simpleMessage("Tickets"),
         "to": MessageLookupByLibrary.simpleMessage("To"),
+        "to_private_trip": MessageLookupByLibrary.simpleMessage("Private Trip"),
+        "to_setting": MessageLookupByLibrary.simpleMessage("Setting"),
         "to_title":
             MessageLookupByLibrary.simpleMessage("Select Destination City"),
-        "travel_date": MessageLookupByLibrary.simpleMessage("Travel Date")
+        "travel_date": MessageLookupByLibrary.simpleMessage("Travel Date"),
+        "user_name": MessageLookupByLibrary.simpleMessage("Name")
       };
 }

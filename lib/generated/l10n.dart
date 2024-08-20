@@ -569,6 +569,106 @@ class S {
       args: [],
     );
   }
+
+  /// `Setting`
+  String get to_setting {
+    return Intl.message(
+      'Setting',
+      name: 'to_setting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Private Trip`
+  String get to_private_trip {
+    return Intl.message(
+      'Private Trip',
+      name: 'to_private_trip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Book your own trip`
+  String get mini_jet_title {
+    return Intl.message(
+      'Book your own trip',
+      name: 'mini_jet_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mini Jet`
+  String get mini_jet {
+    return Intl.message(
+      'Mini Jet',
+      name: 'mini_jet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chose Car`
+  String get chose_car {
+    return Intl.message(
+      'Chose Car',
+      name: 'chose_car',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search for a trip`
+  String get search_for_private_trip {
+    return Intl.message(
+      'Search for a trip',
+      name: 'search_for_private_trip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your name`
+  String get error_form_filed_name {
+    return Intl.message(
+      'Please enter your name',
+      name: 'error_form_filed_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your phone number`
+  String get error_form_filed_phone_number {
+    return Intl.message(
+      'Please enter your phone number',
+      name: 'error_form_filed_phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `phone number`
+  String get phone_number {
+    return Intl.message(
+      'phone number',
+      name: 'phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get user_name {
+    return Intl.message(
+      'Name',
+      name: 'user_name',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

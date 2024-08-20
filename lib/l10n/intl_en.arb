@@ -50,7 +50,19 @@
   "save": "Save",
   "old_pass": "Current Password",
   "new_pass": "New Password",
-  "confirm_new_pass": "Confirm New Password"
+  "confirm_new_pass": "Confirm New Password",
+  "to_setting": "Setting",
+  "to_private_trip": "Private Trip",
+  "mini_jet_title": "Book your own trip",
+  "mini_jet": "Mini Jet",
+  "chose_car": "Chose Car",
+  "search_for_private_trip": "Search for a trip",
+  "error_form_filed_name": "Please enter your name",
+  "error_form_filed_phone_number": "Please enter your phone number",
+  "phone_number": "phone number",
+  "user_name": "Name"
+
+
 
 
 

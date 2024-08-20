@@ -50,7 +50,18 @@
   "save": "حفظ",
   "old_pass":"كلمة المرور الحالية",
   "new_pass":"كلمة المرور الجديدة",
-  "confirm_new_pass":"تأكيد كلمة المرور الجديدة"
+  "confirm_new_pass":"تأكيد كلمة المرور الجديدة",
+  "to_setting": "الإعدادات",
+  "to_private_trip": "رحلة خاصة",
+  "mini_jet_title": "احجز رحلتك الخاصة",
+  "mini_jet": "مني جت",
+  "chose_car": "اختار السيارة",
+  "search_for_private_trip": "ابحث عن رحلة",
+  "error_form_filed_name": "الرجاء إدخال اسمك" ,
+  "error_form_filed_phone_number": "الرجاء إدخال رقم هاتفك",
+  "phone_number": "رقم الهاتف",
+  "user_name": "الإسم"
+
 
 
 

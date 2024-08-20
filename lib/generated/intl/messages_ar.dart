@@ -33,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("المقاعد المتاحة"),
         "back": MessageLookupByLibrary.simpleMessage("الرجوع"),
         "book_now": MessageLookupByLibrary.simpleMessage("احجز الآن"),
+        "chose_car": MessageLookupByLibrary.simpleMessage("اختار السيارة"),
         "confirm_new_pass":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور الجديدة"),
         "confirm_password":
@@ -48,6 +49,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "email_required":
             MessageLookupByLibrary.simpleMessage("البريد الإلكتروني مطلوب"),
+        "error_form_filed_name":
+            MessageLookupByLibrary.simpleMessage("الرجاء إدخال اسمك"),
+        "error_form_filed_phone_number":
+            MessageLookupByLibrary.simpleMessage("الرجاء إدخال رقم هاتفك"),
         "from": MessageLookupByLibrary.simpleMessage("من"),
         "from_title": MessageLookupByLibrary.simpleMessage("حدد مدينة السفر"),
         "head_title": MessageLookupByLibrary.simpleMessage("احجز تذكرتك"),
@@ -56,6 +61,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "login": MessageLookupByLibrary.simpleMessage("دخول"),
         "login_account": MessageLookupByLibrary.simpleMessage("دخول حساب"),
         "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+        "mini_jet": MessageLookupByLibrary.simpleMessage("مني جت"),
+        "mini_jet_title":
+            MessageLookupByLibrary.simpleMessage("احجز رحلتك الخاصة"),
         "name": MessageLookupByLibrary.simpleMessage("الإسم بالكامل"),
         "name_required": MessageLookupByLibrary.simpleMessage("الاسم مطلوب"),
         "name_too_long": MessageLookupByLibrary.simpleMessage(
@@ -75,6 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "يجب أن تكون كلمة المرور 6 أحرف على الأقل"),
         "passwords_do_not_match":
             MessageLookupByLibrary.simpleMessage("كلمات المرور غير متطابقة"),
+        "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
         "privacy_policy":
             MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
         "private_trips": MessageLookupByLibrary.simpleMessage("رحلات خاصة"),
@@ -87,6 +96,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "reserved_seats":
             MessageLookupByLibrary.simpleMessage("المقاعد المحجوزة"),
         "save": MessageLookupByLibrary.simpleMessage("حفظ"),
+        "search_for_private_trip":
+            MessageLookupByLibrary.simpleMessage("ابحث عن رحلة"),
         "select_date": MessageLookupByLibrary.simpleMessage("أختار التاريخ"),
         "selected_seats":
             MessageLookupByLibrary.simpleMessage("المقاعد المختارة"),
@@ -97,7 +108,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("الشروط والأحكام"),
         "tickets": MessageLookupByLibrary.simpleMessage("تذاكر"),
         "to": MessageLookupByLibrary.simpleMessage("إلى"),
+        "to_private_trip": MessageLookupByLibrary.simpleMessage("رحلة خاصة"),
+        "to_setting": MessageLookupByLibrary.simpleMessage("الإعدادات"),
         "to_title": MessageLookupByLibrary.simpleMessage("حدد مدينة الوجهة"),
-        "travel_date": MessageLookupByLibrary.simpleMessage("تاريخ السفر")
+        "travel_date": MessageLookupByLibrary.simpleMessage("تاريخ السفر"),
+        "user_name": MessageLookupByLibrary.simpleMessage("الإسم")
       };
 }
