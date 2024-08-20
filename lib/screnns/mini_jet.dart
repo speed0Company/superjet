@@ -458,7 +458,6 @@ class _MiniJetScreenState extends State<MiniJetScreen> {
                       padding: const EdgeInsets.symmetric(horizontal:5.0,vertical: 15 ),
                       child: DropdownExample(),
                     ),
-
                     SizedBox(height: 20.h),
                     GestureDetector(
                       onTap: () {
@@ -524,7 +523,6 @@ class _MiniJetScreenState extends State<MiniJetScreen> {
                       ),
                     ),
                     SizedBox(height: 10.h),
-
                   ],
                 ),
               ),
