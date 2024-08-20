@@ -61,7 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "login": MessageLookupByLibrary.simpleMessage("دخول"),
         "login_account": MessageLookupByLibrary.simpleMessage("دخول حساب"),
         "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
-        "mini_jet": MessageLookupByLibrary.simpleMessage("مني جت"),
+        "mini_jet": MessageLookupByLibrary.simpleMessage("ميني چيت"),
         "mini_jet_title":
             MessageLookupByLibrary.simpleMessage("احجز رحلتك الخاصة"),
         "name": MessageLookupByLibrary.simpleMessage("الإسم بالكامل"),
