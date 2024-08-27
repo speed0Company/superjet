@@ -1,15 +1,18 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:splashify/splashify.dart';
 import 'package:superjet/colors/style_color.dart';
-import 'package:superjet/screnns/home_screen.dart';
+import 'package:superjet/screnns/book_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:superjet/screnns/home_container.dart';
 
 import 'generated/l10n.dart';
 
 void main()async {
+
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
   final localeCode = prefs.getString('locale') ?? 'ar';
@@ -51,7 +54,7 @@ class _MyAppState extends State<MyApp> {
           GlobalCupertinoLocalizations.delegate,
         ],
         theme: ThemeData(
-          colorScheme:ColorScheme.light(primary: headTitleColor)
+          colorScheme:ColorScheme.light(primary: Colors.white)
         ),
         supportedLocales: S.delegate.supportedLocales,
         debugShowCheckedModeBanner: false,

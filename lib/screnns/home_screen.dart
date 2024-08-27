@@ -1,429 +1,673 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:superjet/colors/style_color.dart';
-import 'package:superjet/screnns/error_search.dart';
-import 'package:superjet/screnns/trips_screen.dart';
-import 'package:superjet/widgets/banner.dart';
+import 'package:superjet/screnns/show_details_screen.dart';
 
+import '../colors/style_color.dart';
 import '../generated/l10n.dart';
-import '../widgets/bottom_sheet_page.dart';
-bool isErrorFrom=false;
-bool isErrorTo=false;
+import '../models/details_model.dart';
+import '../widgets/home_banner.dart';
 
-
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({required this.changeLanguage, super.key});
-  final Function(Locale) changeLanguage;
-
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-
-}
-class _HomeScreenState extends State<HomeScreen> {
-  int numberOfSet = 1;
-  DateTime? selectedDate;
-  String fromCity = S.current.Select_travel_city;
-  String toCity = S.current.Select_travel_arrive;
-  bool fromCitySelected = false;
-  DateTime now = DateTime.now();
-
-
-  final List<String> cities = [
-    "القاهره",
-    "الإسكندرية",
-    "الجيزة",
-    "أسوان",
-    "الأقصر",
-     "الزقازيق",
-  ];
-
-  void bottomSheet(bool isFrom) {
-    showModalBottomSheet(
-      context: context,
-      builder: (context) => BottomSheetPage(
-        isFrom: isFrom,
-        onCitySelected: (city) {
-          setState(() {
-            if (isFrom) {
-              fromCity = city;
-              fromCitySelected = true;
-              toCity = S.current.Select_travel_arrive; // Reset the toCity selection
-            } else {
-              toCity = city;
-            }
-          });
-        },
-        cities: cities,
-        selectedCity: fromCity,
-      ),
-    );
-  }
-
-  void pickDate() {
-
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        actions: [
-          GestureDetector(
-            onTap: () {
-              setState(() {
-
-              });
-              Navigator.pop(context);
-            },
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5.r),
-                color: headTitleColor,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Center(
-                  child: Text(
-                    S.of(context).done,
-                    style: GoogleFonts.cairo(
-                      color: Colors.white,
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-
-        ],
-        content: SizedBox(
-          width: MediaQuery.of(context).size.width / 1.5,
-          height: 200,
-          child: CupertinoDatePicker(
-            mode: CupertinoDatePickerMode.date,
-            initialDateTime: selectedDate,
-            minimumDate: DateTime(now.year, now.month, now.day+1),
-            onDateTimeChanged: (DateTime newDateTime) {
-
-                selectedDate = DateTime(newDateTime.year,newDateTime.month,newDateTime.day);
-
-            },
-          ),
-        ),
-      ),
-    );
-  }
-
-@override
-  void initState() {
-    super.initState();
-    selectedDate=DateTime(now.year, now.month, now.day+1);
-  }
-  void updateLocalizedStrings() {
-    fromCity = S.of(context).Select_travel_city;
-    toCity = S.of(context).Select_travel_arrive;
-  }
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    updateLocalizedStrings();
-  }
-
+class HomeWidgetScreen extends StatelessWidget {
+  const HomeWidgetScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-
-          SliverPersistentHeader(
-
-            pinned: true,
-            delegate: MySliverAppBar(
-              expandedHeight: 200.h,
-              collapsedHeight: 150.h,
-              changeLanguage: widget.changeLanguage
-            ),
-          ),
-          SliverToBoxAdapter(
+    return Column(
+      children: [
+        HomeBanner(),
+        Expanded(
+          child: SingleChildScrollView(
+            padding: EdgeInsets.only(bottom: 70),
             child: Padding(
-              padding: const EdgeInsets.all(30.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    S.of(context).head_title,
-                    style: GoogleFonts.cairo(
-                      color: headTitleColor,
-                      fontSize: 26.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    S.of(context).from,
-                    style: GoogleFonts.cairo(
-                      color: SecondTitleColor,
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      bottomSheet(true);
-                    },
-                    child: Container(
-                      margin: const EdgeInsets.all(5.0),
-                      padding: const EdgeInsets.all(15.0),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey),
-                      ),
-                      child: Row(
-                        children: [
-                          Text(
-                            fromCity,
-                            style: GoogleFonts.cairo(
-                              color: fromCity != S.of(context).Select_travel_city ? Colors.black : Colors.grey,
-                              fontSize: 15.sp,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Spacer(),
-                          Icon(
-                            Icons.location_on_outlined,
-                            color: Colors.grey,
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  isErrorFrom?Text(
-                    S.of(context).Select_travel_city,
-                    style: GoogleFonts.cairo(
-                      color: headTitleColor,
-                      fontSize: 15.sp,
-                    ),
-                  ):Container(),
-
-                  SizedBox(height: 20.h),
-                  Text(
-                    S.of(context).to,
-                    style: GoogleFonts.cairo(
-                      color: SecondTitleColor,
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: fromCitySelected
-                        ? () {
-                      bottomSheet(false);
-                    }
-                        : null,
-                    child: Container(
-                      margin: const EdgeInsets.all(5.0),
-                      padding: const EdgeInsets.all(15.0),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey),
-                      ),
-                      child: Row(
-                        children: [
-                          Text(
-                            toCity,
-                            style: GoogleFonts.cairo(
-                              color: toCity != S.of(context).Select_travel_arrive ? Colors.black : Colors.grey,
-                              fontSize: 15.sp,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Spacer(),
-                          Icon(
-                            Icons.location_on_outlined,
-                            color: Colors.grey,
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  isErrorTo?Text(
-                    S.of(context).Select_travel_arrive,
-                    style: GoogleFonts.cairo(
-                      color: headTitleColor,
-                      fontSize: 15.sp,
-                    ),
-                  ):Container(),
-                  SizedBox(height: 20.h),
-                  Text(
-                    S.of(context).number_of_set_title,
-                    style: GoogleFonts.cairo(
-                      color: SecondTitleColor,
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
                   Container(
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                if(numberOfSet<500)
-                                numberOfSet++;
-                              });
-                            },
-                            child: Container(
-                              height: 25.h,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5.r),
-                                color: headTitleColor,
-                              ),
-                              child: Center(
-                                child: Icon(
-                                  Icons.add,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Text(
-                            "$numberOfSet",
-                            style: GoogleFonts.cairo(
-                              color: SecondTitleColor,
-                              fontSize: 18.sp,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: GestureDetector(
-                            onTap: () {
-                              if (numberOfSet > 1) {
-                                setState(() {
-                                  numberOfSet--;
-                                });
-                              }
-                            },
-                            child: Container(
-                              height: 25.h,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5.r),
-                                color: headTitleColor,
-                              ),
-                              child: Center(
-                                child: Icon(
-                                  Icons.remove,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          ),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(5),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 5,
+                          offset: Offset(0, 3), // Shadow position
                         ),
                       ],
                     ),
-                  ),
-                  Text(
-                    S.of(context).travel_date,
-                    style: GoogleFonts.cairo(
-                      color: SecondTitleColor,
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: pickDate,
-                    child: Container(
-                      margin: const EdgeInsets.all(5.0),
-                      padding: const EdgeInsets.all(15.0),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey),
-                      ),
-                      child: Row(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
+                      child: Column(
                         children: [
-                          Text(
-                            selectedDate != null
-                                ? "${selectedDate!.year}/${selectedDate!.month}/${selectedDate!.day}"
-                                : S.of(context).select_date,
-                            style: GoogleFonts.cairo(
-                              color: selectedDate != null ? Colors.black : Colors.grey,
-                              fontSize: 15.sp,
-                              fontWeight: FontWeight.bold,
-                            ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Expanded(
+                                flex: 1,
+                                child: Image.asset(
+                                  width: 70.w,
+                                  height: 70.h,
+                                  Localizations.localeOf(context)
+                                      .languageCode ==
+                                      "ar" ?"assets/images/flyer_ar.png":"assets/images/flyer_en.png",
+                                  fit: BoxFit.cover,
+
+
+                                ),
+                              ),
+                              SizedBox(
+                                  width: 10.w), // Space between text and image
+                              Expanded(
+                                flex: 2,
+                                child: Text(
+                                  S.of(context).flyer_txt,
+                                  style: GoogleFonts.cairo(
+                                    fontSize: 9.sp, // Adjust the size as needed
+                                    height:
+                                        1.5, // Line height for better readability
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                          Spacer(),
-                          Icon(
-                            Icons.calendar_month,
-                            color: Colors.grey,
-                          )
                         ],
                       ),
                     ),
                   ),
-                  SizedBox(height: 30.h),
-                  GestureDetector(
-                    onTap: () {
-                      if( fromCity!=S.of(context).Select_travel_city&&toCity!=S.of(context).Select_travel_arrive)
-                      {
-                        isErrorFrom=false;
-                        isErrorTo=false;
-                        setState(() {
-
-                        });
-
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => TripsScreen(
-                          fromCity: fromCity,
-                          toCity: toCity,
-                        ),));
-
-                        // Navigator.push(context, MaterialPageRoute(builder: (context) => ErrorSearch(),));
-                      }
-                      else{
-                        isErrorFrom=false;
-                        isErrorTo=false;
-                        if(fromCity==S.of(context).Select_travel_city)
-                          {
-                            isErrorFrom=true;
-                          }
-
-                        if(toCity==S.of(context).Select_travel_arrive)
-                        {
-                        isErrorTo=true;
-                        }
-                        setState(() {
-
-                        });
-                      }
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5.r),
-                        color: headTitleColor,
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(13.0),
-                        child: Center(
-                          child: Text(
-                            S.of(context).show_trip,
-                            style: GoogleFonts.cairo(
-                              color: Colors.white,
-                              fontSize: 15.sp,
-                              fontWeight: FontWeight.bold,
-                            ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  StaggeredGrid.count(
+                    crossAxisCount: 4,
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 30,
+                    children: [
+                      StaggeredGridTile.count(
+                        crossAxisCellCount: 2,
+                        mainAxisCellCount: 2,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ShowDetailsScreen(
+                                  pageTitle: S.of(context).bahary_citys,
+                                  data: [
+                                    DetailsModel(
+                                      image: "assets/images/alex.png",
+                                      city: S.of(context).alex_city,
+                                      disc: S.of(context).alex_disc,
+                                    ),
+                                    DetailsModel(
+                                      image: "assets/images/matroh.png",
+                                      city: S.of(context).matroh_city,
+                                      disc: S.of(context).matroh_disc,
+                                    ),
+                                    DetailsModel(
+                                      image: "assets/images/sahal.png",
+                                      city: S.of(context).sahal_city,
+                                      disc: S.of(context).sahal_disc,
+                                    ),
+                                    DetailsModel(
+                                      image: "assets/images/alamin.png",
+                                      city: S.of(context).alamin_city,
+                                      disc: S.of(context).alamin_disc,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                          child: Stack(
+                            fit: StackFit.expand,
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(5),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.5),
+                                      spreadRadius: 2,
+                                      blurRadius: 5,
+                                      offset: Offset(0, 3), // Shadow position
+                                    ),
+                                  ],
+                                ),
+                                child: Image.asset(
+                                  "assets/images/bahary_banner.png",
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment.bottomRight,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Text(
+                                    S.of(context).bahary_citys,
+                                    style: GoogleFonts.cairo(
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
+                      StaggeredGridTile.count(
+                        crossAxisCellCount: 2,
+                        mainAxisCellCount: 1,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ShowDetailsScreen(
+                                  pageTitle: S.of(context).qana_citys,
+                                  data: [
+                                    DetailsModel(
+                                      image: "assets/images/borsaid.png",
+                                      city: S.of(context).borsaid_city,
+                                      disc: S.of(context).borsaid_disc,
+                                    ),
+                                    DetailsModel(
+                                      image: "assets/images/suze.png",
+                                      city: S.of(context).suez_city,
+                                      disc: S.of(context).suez_disc,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                          child: Stack(
+                            fit: StackFit.expand,
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(5),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.5),
+                                      spreadRadius: 2,
+                                      blurRadius: 5,
+                                      offset: Offset(0, 3), // Shadow position
+                                    ),
+                                  ],
+                                ),
+                                child: Image.asset(
+                                  "assets/images/qana_img.png",
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment.bottomRight,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Text(
+                                    S.of(context).qana_citys,
+                                    style: GoogleFonts.cairo(
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      StaggeredGridTile.count(
+                        crossAxisCellCount: 2,
+                        mainAxisCellCount: 1,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ShowDetailsScreen(
+                                  pageTitle: S.of(context).eqbli_citys,
+                                  data: [
+                                    DetailsModel(
+                                      image: "assets/images/qana.png",
+                                      city: S.of(context).qena_city,
+                                      disc: S.of(context).qena_disc,
+                                    ),
+                                    DetailsModel(
+                                      image: "assets/images/luxur.png",
+                                      city: S.of(context).luxor_city,
+                                      disc: S.of(context).luxor_disc,
+                                    ),
+                                    DetailsModel(
+                                      image: "assets/images/almnia.png",
+                                      city: S.of(context).minya_city,
+                                      disc: S.of(context).minya_disc,
+                                    ),
+                                    DetailsModel(
+                                      image: "assets/images/sohag.png",
+                                      city: S.of(context).sohag_city,
+                                      disc: S.of(context).sohag_disc,
+                                    ),
+                                    DetailsModel(
+                                      image: "assets/images/asut.png",
+                                      city: S.of(context).asiut_city,
+                                      disc: S.of(context).asiut_disc,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                          child: Stack(
+                            fit: StackFit.expand,
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(5),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.5),
+                                      spreadRadius: 2,
+                                      blurRadius: 5,
+                                      offset: Offset(0, 3), // Shadow position
+                                    ),
+                                  ],
+                                ),
+                                child: Image.asset(
+                                  "assets/images/eqbli_img.png",
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment.bottomRight,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Text(
+                                    S.of(context).eqbli_citys,
+                                    style: GoogleFonts.cairo(
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  StaggeredGrid.count(
+                    crossAxisCount: 4,
+                    mainAxisSpacing: 2,
+                    crossAxisSpacing: 30,
+                    children: [
+                      StaggeredGridTile.count(
+                        crossAxisCellCount: 2,
+                        mainAxisCellCount: 1,
+                        child: Stack(
+                          fit: StackFit.expand,
+                          children: [
+                            Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(5),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.5),
+                                      spreadRadius: 2,
+                                      blurRadius: 5,
+                                      offset: Offset(0, 3), // Shadow position
+                                    ),
+                                  ],
+                                ),
+                                child: Image.asset(
+                                  "assets/images/discover_img.png",
+                                  fit: BoxFit.fill,
+                                )),
+                            Align(
+                                alignment: Alignment.bottomRight,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Text(
+                                    S.of(context).discovey_egypt,
+                                    style: GoogleFonts.cairo(
+                                      color: Colors.white,
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                )),
+                          ],
+                        ),
+                      ),
+                      StaggeredGridTile.count(
+                        crossAxisCellCount: 2,
+                        mainAxisCellCount: 1,
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ShowDetailsScreen(
+                                  pageTitle: S.of(context).bahary_citys,
+                                  data: [
+                                    DetailsModel(
+                                      image: "assets/images/jurdan.png",
+                                      city: S.of(context).jordan_country,
+                                      disc: S.of(context).jourdan_desc,
+                                    ),
+                                    DetailsModel(
+                                      image: "assets/images/lypia_img.png",
+                                      city: S.of(context).libya_country,
+                                      disc: S.of(context).lipya_desc,
+                                    ),
+
+                                  ],
+                                ),
+                              ),
+                            );
+
+                          },
+                          child: Stack(
+                            fit: StackFit.expand,
+                            children: [
+                              Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(5),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.grey.withOpacity(0.5),
+                                        spreadRadius: 2,
+                                        blurRadius: 5,
+                                        offset: Offset(0, 3), // Shadow position
+                                      ),
+                                    ],
+                                  ),
+                                  child: Image.asset(
+                                    "assets/images/dawaly_img.png",
+                                    fit: BoxFit.fill,
+                                  )),
+                              Align(
+                                  alignment: Alignment.bottomRight,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Text(
+                                      S.of(context).international,
+                                      style: GoogleFonts.cairo(
+                                        color: Colors.white,
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  )),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 150,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ShowDetailsScreen(
+                              pageTitle: S.of(context).syahia,
+                              data: [
+                                DetailsModel(
+                                  image: "assets/images/sharm.png",
+                                  city: S.of(context).sharm_city,
+                                  disc: S.of(context).sharm_desc,
+                                ),
+                                DetailsModel(
+                                  image: "assets/images/nwabea.png",
+                                  city: S.of(context).nwabea_city,
+                                  disc: S.of(context).nwabea_desc,
+                                ),
+                                DetailsModel(
+                                  image: "assets/images/gardga.png",
+                                  city: S.of(context).gardga_city,
+                                  disc: S.of(context).gardga_desc,
+                                ),
+                                DetailsModel(
+                                  image: "assets/images/safaga.png",
+                                  city: S.of(context).safaga_city,
+                                  disc: S.of(context).safaga_desc,
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                      child: Stack(
+                        fit: StackFit.expand,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(5),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 2,
+                                  blurRadius: 5,
+                                  offset: Offset(0, 3),
+                                ),
+                              ],
+                            ),
+                            child: Image.asset(
+                              "assets/images/sayhya_img.png",
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Text(
+                                S.of(context).syahia,
+                                style: GoogleFonts.cairo(
+                                  color: Colors.white,
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(7),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 5,
+                          offset: Offset(0, 3), // Shadow position
+                        ),
+                      ],
+                    ),
+                    child: IntrinsicHeight(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment
+                            .stretch, // Ensure both children take full height
+                        children: [
+                          Expanded(
+                            flex: 2,
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    S.of(context).why_chosse_us,
+                                    style: GoogleFonts.cairo(
+                                      fontSize:
+                                          12.sp, // Adjust the size as needed
+                                      fontWeight: FontWeight.bold,
+                                      color: headTitleColor,
+                                      height:
+                                          1.5, // Line height for better readability
+                                    ),
+                                  ),
+                                  SizedBox(height: 5),
+                                  Flexible(
+                                    child: Text(
+                                      S.of(context).flyer_txt,
+                                      style: GoogleFonts.cairo(
+                                        fontSize:
+                                            8.sp, // Adjust the size as needed
+                                        height:
+                                            1.5, // Line height for better readability
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            flex: 2,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Localizations.localeOf(context)
+                                              .languageCode ==
+                                          "ar"
+                                      ? Radius.circular(7)
+                                      : Radius.circular(0),
+                                  bottomLeft: Localizations.localeOf(context)
+                                              .languageCode ==
+                                          "ar"
+                                      ? Radius.circular(7)
+                                      : Radius.circular(0),
+                                  topRight: Localizations.localeOf(context)
+                                              .languageCode ==
+                                          "ar"
+                                      ? Radius.circular(0)
+                                      : Radius.circular(7),
+                                  bottomRight: Localizations.localeOf(context)
+                                              .languageCode ==
+                                          "ar"
+                                      ? Radius.circular(0)
+                                      : Radius.circular(
+                                          7)), // Match container's border radius
+                              child: Image.asset(
+                                "assets/images/why_super_jet.png",
+                                fit: BoxFit
+                                    .cover, // Fill to match the column's height
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    S.of(context).super_jet_categories,
+                    style: GoogleFonts.cairo(
+                      fontSize: 17.sp, // Adjust the size as needed
+                      fontWeight: FontWeight.bold,
+                      color: headTitleColor,
+                      height: 1.5, // Line height for better readability
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(7),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.5),
+                                spreadRadius: 2,
+                                blurRadius: 5,
+                                offset: Offset(0, 3), // Shadow position
+                              ),
+                            ],
+                          ),
+                          child: Image.asset(
+                            "assets/images/econmy_img.png",
+                            width: MediaQuery.of(context).size.width / 3.5,
+                          )),
+                      Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(7),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.5),
+                                spreadRadius: 2,
+                                blurRadius: 5,
+                                offset: Offset(0, 3), // Shadow position
+                              ),
+                            ],
+                          ),
+                          child: Image.asset("assets/images/Majestic_img.png",
+                              width: MediaQuery.of(context).size.width / 3.5)),
+                      Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(7),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.5),
+                                spreadRadius: 2,
+                                blurRadius: 5,
+                                offset: Offset(0, 3), // Shadow position
+                              ),
+                            ],
+                          ),
+                          child: Image.asset("assets/images/vip_img.png",
+                              width: MediaQuery.of(context).size.width / 3.5)),
+                    ],
+                  )
                 ],
               ),
             ),
           ),
-        ],
-      ),
+        )
+      ],
     );
   }
 }

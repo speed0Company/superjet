@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:superjet/screnns/home_screen.dart';
+import 'package:superjet/screnns/book_screen.dart';
 import '../colors/style_color.dart';
 import '../generated/l10n.dart';
 

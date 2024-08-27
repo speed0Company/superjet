@@ -38,52 +38,20 @@ class MiniJetAppBar extends SliverPersistentHeaderDelegate {
           ),
         ),
         Align(
-            alignment: Alignment.topRight,
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                    width: 100,
-                    height: size/2.3.h,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage(Localizations.localeOf(context).languageCode=="ar"?'assets/images/superjet_logo.png':"assets/images/logo_english.png"),
-                            fit: BoxFit.contain
-                        )
-                    ),
-                  ),
+            alignment: Alignment.topLeft,
+            child:   Padding(
+              padding: const EdgeInsets.only(top: 20.0, left: 10, right: 10),
+              child: IconButton(
+                icon: Icon(
+                  Localizations.localeOf(context).languageCode=="ar"?CupertinoIcons.forward:CupertinoIcons.back,
+                  color: Colors.white,
                 ),
-                Spacer(),
-                // Padding(
-                //   padding: const EdgeInsets.only(top: 30.0,left: 10,right: 10),
-                //   child: IconButton(onPressed: (){
-                //     Navigator.push(context, MaterialPageRoute(builder: (context) => AccountScreen(
-                //       changeLanguage: changeLanguage,
-                //     ),));
-                //   }, icon: Container(
-                //     decoration: BoxDecoration(
-                //       color: Colors.white,
-                //       borderRadius: BorderRadius.circular(50.r)
-                //     ),
-                //  child: Icon(Icons.account_circle_rounded,color: Color(0xffCF9A2C),size: 35,))),
-                // ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20.0, left: 10, right: 10),
-                  child: IconButton(
-                    icon: Icon(
-                      CupertinoIcons.forward,
-                      color: Colors.white,
-                    ),
-                    onPressed: (){
-                      Navigator.pop(context);
-                    },
-                  ),
-                )
-
-
-              ],
-            ))
+                onPressed: (){
+                  Navigator.pop(context);
+                },
+              ),
+            )
+        )
       ],
     );
   }
