@@ -63,7 +63,7 @@ class _MyAppState extends State<MyApp> {
           imageFadeIn: true,
           // colorBlendAnimation: headTitleColor,
           navigateDuration: 5,
-          imageSize: 500.0,
+          imageSize: MediaQuery.of(context).size.height/4,
           titleColor: headTitleColor,
           colorizeTileAnimationColors: [
             headTitleColor,

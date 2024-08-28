@@ -38,12 +38,14 @@ class MiniJetAppBar extends SliverPersistentHeaderDelegate {
           ),
         ),
         Align(
-            alignment: Alignment.topLeft,
+            alignment: Localizations.localeOf(context)
+                .languageCode ==
+                "ar" ? Alignment.topRight:Alignment.topLeft,
             child:   Padding(
-              padding: const EdgeInsets.only(top: 20.0, left: 10, right: 10),
+              padding:  EdgeInsets.only(top: MediaQuery.of(context).size.height/30, left: 10, right: 10),
               child: IconButton(
                 icon: Icon(
-                  Localizations.localeOf(context).languageCode=="ar"?CupertinoIcons.forward:CupertinoIcons.back,
+                  CupertinoIcons.back,
                   color: Colors.white,
                 ),
                 onPressed: (){
@@ -51,8 +53,7 @@ class MiniJetAppBar extends SliverPersistentHeaderDelegate {
                 },
               ),
             )
-        )
-      ],
+        )      ],
     );
   }
 

@@ -30,23 +30,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("أختار مدينة السفر"),
         "about_us": MessageLookupByLibrary.simpleMessage("عن الشركة"),
         "account": MessageLookupByLibrary.simpleMessage("حسابي"),
-        "alamin_city": MessageLookupByLibrary.simpleMessage("العلمين"),
-        "alamin_disc": MessageLookupByLibrary.simpleMessage(
-            "العلمين الجديدة مدينة مصرية جديدة من مدن الجيل الرابع في مصر تقع في محافظة مطروح وتتبع إدارياً لهيئة المجتمعات العمرانية الجديدة."),
-        "alex_city": MessageLookupByLibrary.simpleMessage("الإسكندرية"),
-        "alex_disc": MessageLookupByLibrary.simpleMessage(
-            "عروس البحر المتوسط وأشهر المدن الساحلية في مصر، تمتلك من المزارات الخلابة ما يجعلها الوجهة المناسبة لقضاء وقت ممتع مثل عامود السواري، المتحف اليوناني والروماني، حدائق المنتزه، حدائق أنطونيادس، قلعة قايتباي، الكاتدرائية المرقسية، حدائق الشلالات."),
-        "asiut_city": MessageLookupByLibrary.simpleMessage("أسيوط"),
-        "asiut_disc": MessageLookupByLibrary.simpleMessage(
-            "أسيوط هي كبرى مدن صعيد مصر وهي عاصمة محافظة أسيوط وتحتضن أول جامعة إقليمية (جامعة أسيوط)."),
         "available_seats":
             MessageLookupByLibrary.simpleMessage("المقاعد المتاحة"),
         "back": MessageLookupByLibrary.simpleMessage("الرجوع"),
         "bahary_citys": MessageLookupByLibrary.simpleMessage("الوجه البحرى"),
         "book_now": MessageLookupByLibrary.simpleMessage("احجز الآن"),
-        "borsaid_city": MessageLookupByLibrary.simpleMessage("بورسعيد"),
-        "borsaid_disc": MessageLookupByLibrary.simpleMessage(
-            "بورسعيد (المدينة الباسلة) تتميز بورسعيد بأطعمتها المختلفة متل المدفونة والبكلويز، بالإضافة للعديد من الأماكن المميزة مثل جبل الملح، وكنيسة سانت اوجيني، ومحمية وشاطئ بورفؤاد."),
         "chose_car": MessageLookupByLibrary.simpleMessage("اختار السيارة"),
         "confirm_new_pass":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور الجديدة"),
@@ -75,35 +63,18 @@ class MessageLookup extends MessageLookupByLibrary {
             "خدمة متميزة تُقدم لعملاء سوبرجيت، يقوم العميل بالتسجيل عن طريق البريد الإلكتروني فيحصل على 250 نقطة نتيجة للتسجيل، ويزيد عدد النقاط مع كل رحلة يقوم بها العميل ويمكنه ذلك الحصول على مزايا مثل نسبة خصم على الرحلات ورحلات مجانية."),
         "from": MessageLookupByLibrary.simpleMessage("من"),
         "from_title": MessageLookupByLibrary.simpleMessage("حدد مدينة السفر"),
-        "gardga_city": MessageLookupByLibrary.simpleMessage("الغردقة"),
-        "gardga_desc": MessageLookupByLibrary.simpleMessage(
-            "الغردقة هي العاصمة الإدارية لمحافظة البحر الأحمر وتشغل مساحة ٠ع كم من الشريط الساحلي للشاطئ الغربي للبحر الأحمر."),
+        "gift_point": MessageLookupByLibrary.simpleMessage("٢٥٠ نقطة"),
         "head_title": MessageLookupByLibrary.simpleMessage("احجز تذكرتك"),
         "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "international": MessageLookupByLibrary.simpleMessage("رحلات دولية"),
         "invalid_email": MessageLookupByLibrary.simpleMessage(
             "يرجى إدخال بريد إلكتروني صالح"),
-        "jordan_country": MessageLookupByLibrary.simpleMessage("الأردن"),
-        "jourdan_desc": MessageLookupByLibrary.simpleMessage(
-            "يوفر سوبر جيت رحلات اللي الأردن، بلد يمزج بين الحضارات الماضي المهيبة والمدينة الصاخبة، أيًا كانت ميولك ستجد ما يناسبك في الأردن بلد المغامرة، والتاريخ، والفن، والطعام المميز."),
-        "libya_country": MessageLookupByLibrary.simpleMessage("ليبيا"),
-        "lipya_desc": MessageLookupByLibrary.simpleMessage(
-            "مزيج بين الصحاري والخضار يمكنك التمتع بأجواء الطبيعة الساحرة على الجبل الأخضر المليء بالأشجار والمحاصيل الزراعية المختلفة، بالإضافة لطبيعة المناخ المميزة."),
         "login": MessageLookupByLibrary.simpleMessage("دخول"),
         "login_account": MessageLookupByLibrary.simpleMessage("دخول حساب"),
         "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
-        "luxor_city": MessageLookupByLibrary.simpleMessage("الأقصر"),
-        "luxor_disc": MessageLookupByLibrary.simpleMessage(
-            "الأقصر تلقب بمدينة المائة باب أو مدينة الشمس، عرفت سابقا باسم طيبة، وهي عاصمة مصر في العصر الفرعوني، تقع على ضفاف نهر النيل."),
-        "matroh_city": MessageLookupByLibrary.simpleMessage("مرسى مطروح"),
-        "matroh_disc": MessageLookupByLibrary.simpleMessage(
-            "تعرف بمدينة الشواطئ الساحرة لجمال المياه والشواطئ المختلفة وتنوع المزارات مثل:. حمامات كليوباترا، معبد رمسيس الثاني، كهف الملح، محمية العُميد كما يمكنك زيارة السيرك الصيفي، والسوق الصيني السوري"),
         "mini_jet": MessageLookupByLibrary.simpleMessage("ميني چيت"),
         "mini_jet_title":
             MessageLookupByLibrary.simpleMessage("احجز رحلتك الخاصة"),
-        "minya_city": MessageLookupByLibrary.simpleMessage("المنيا"),
-        "minya_disc": MessageLookupByLibrary.simpleMessage(
-            "المنيا، مدينة مصرية تلقب باسم عروس الصعيد، تقع في مصر الوسطى بشمال الصعيد على الضفة الغربية لنهر النيل."),
         "my_trip": MessageLookupByLibrary.simpleMessage("رحلاتي"),
         "name": MessageLookupByLibrary.simpleMessage("الإسم بالكامل"),
         "name_required": MessageLookupByLibrary.simpleMessage("الاسم مطلوب"),
@@ -116,9 +87,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "لا يوجد رحلات في المحطة المختارة"),
         "number_of_set_title":
             MessageLookupByLibrary.simpleMessage("عدد المقاعد"),
-        "nwabea_city": MessageLookupByLibrary.simpleMessage("نويبع"),
-        "nwabea_desc": MessageLookupByLibrary.simpleMessage(
-            "نويبع هي مدينة مصربة تتبع محافظة جنوب سيناء تطل المدينة على خليج العقبة."),
         "old_pass": MessageLookupByLibrary.simpleMessage("كلمة المرور الحالية"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة السر"),
         "password_required":
@@ -128,27 +96,23 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwords_do_not_match":
             MessageLookupByLibrary.simpleMessage("كلمات المرور غير متطابقة"),
         "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+        "point": MessageLookupByLibrary.simpleMessage("نقطة"),
+        "previous_trips":
+            MessageLookupByLibrary.simpleMessage("الرحلات السابقه"),
         "privacy_policy":
             MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
         "private_trips": MessageLookupByLibrary.simpleMessage("رحلات خاصة"),
         "qana_citys": MessageLookupByLibrary.simpleMessage("مدن القناة"),
-        "qena_city": MessageLookupByLibrary.simpleMessage("قنا"),
-        "qena_disc": MessageLookupByLibrary.simpleMessage(
-            "محافظة قنا هي إحدى محافظات جنوب الصعيد بمصر وتقع جنوب العاصمة القاهرة بحوالي ٦٠٠ كيلومتر."),
         "register": MessageLookupByLibrary.simpleMessage("تسجيل"),
         "register_new_acc":
             MessageLookupByLibrary.simpleMessage("تسجيل حساب جديد بالإيميل"),
+        "register_now":
+            MessageLookupByLibrary.simpleMessage("سجل دلوقتى و اكسب"),
         "remaining_chairs":
             MessageLookupByLibrary.simpleMessage("كراسي متبقية"),
         "reservation": MessageLookupByLibrary.simpleMessage("حجز"),
         "reserved_seats":
             MessageLookupByLibrary.simpleMessage("المقاعد المحجوزة"),
-        "safaga_city": MessageLookupByLibrary.simpleMessage("سفاجا"),
-        "safaga_desc": MessageLookupByLibrary.simpleMessage(
-            "تحتوي سفاجا على العديد من القرى السياحية كما تعتبر متخصصة في التدريب على رياضة الغوص وفي إقامة مسابقات الصيد والعديد من الأنشطة السياحية الترفيهية."),
-        "sahal_city": MessageLookupByLibrary.simpleMessage("الساحل الشمالي"),
-        "sahal_disc": MessageLookupByLibrary.simpleMessage(
-            "يتميز الساحل الشمالي بالمياة العذبة والشواطئ الرملية، بالإضافة للأنشطة المتنوعة مثل الأكوا بارك، والحفلات الغنائية، وحفلات الشواء، والعديد من الرياضات المائية. "),
         "save": MessageLookupByLibrary.simpleMessage("حفظ"),
         "search_for_private_trip":
             MessageLookupByLibrary.simpleMessage("ابحث عن رحلة"),
@@ -157,16 +121,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("المقاعد المختارة"),
         "sets_title": MessageLookupByLibrary.simpleMessage(
             "من فضلك اختر المقعد / المقاعد"),
-        "sharm_city": MessageLookupByLibrary.simpleMessage("شرم الشيخ"),
-        "sharm_desc": MessageLookupByLibrary.simpleMessage(
-            "شرم الشيخ تعتبر وجهة جذب سياحية عالمية لما تحتويه من بيئة طبيعية وسياحية مميزة، وتتميز بالشعاب المرجانية، والأسماك، والأنشطة المختلفة مثل الغوص، والإبحار بالقوارب الشراعية."),
         "show_trip": MessageLookupByLibrary.simpleMessage("أعرض الرحلات"),
-        "sohag_city": MessageLookupByLibrary.simpleMessage("سوهاج"),
-        "sohag_disc": MessageLookupByLibrary.simpleMessage(
-            "سوهاج هي مدينة تقع على الضفة الغربية لنهر النيل في مصر وهي عاصمة محافظة سوهاج."),
-        "suez_city": MessageLookupByLibrary.simpleMessage("السويس"),
-        "suez_disc": MessageLookupByLibrary.simpleMessage(
-            "السويس، مدينة مصرية، عاصمة محافظة السويس، تقع على رأس خليج السويس وهي أكبر المدن المصرية المطلة على البحر الأحمر. سميت قناة السويس على اسم المدينة."),
         "super_jet_categories":
             MessageLookupByLibrary.simpleMessage("فئات سوبر چيت"),
         "syahia": MessageLookupByLibrary.simpleMessage("الوجهات السياحية"),
@@ -177,6 +132,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "to_private_trip": MessageLookupByLibrary.simpleMessage("رحلة خاصة"),
         "to_setting": MessageLookupByLibrary.simpleMessage("الإعدادات"),
         "to_title": MessageLookupByLibrary.simpleMessage("حدد مدينة الوجهة"),
+        "total_points":
+            MessageLookupByLibrary.simpleMessage("اجمالى عدد النقاط"),
         "travel_date": MessageLookupByLibrary.simpleMessage("تاريخ السفر"),
         "user_name": MessageLookupByLibrary.simpleMessage("الإسم"),
         "why_chosse_us":

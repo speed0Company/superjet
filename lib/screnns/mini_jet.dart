@@ -168,6 +168,8 @@ class _MiniJetScreenState extends State<MiniJetScreen> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal:5.0,vertical: 10 ),
                       child: TextFormField(
+                        cursorColor: headTitleColor,
+
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return S.of(context).error_form_filed_name;
@@ -200,6 +202,14 @@ class _MiniJetScreenState extends State<MiniJetScreen> {
 
                               borderRadius: BorderRadius.zero
                           ),
+                          focusedBorder:OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: headTitleColor, // Adjust the color to match the image
+                                width: 1.0, // Adjust the width to match the image
+                              ),
+
+                              borderRadius: BorderRadius.zero
+                          ),
 
                         ),
                       ),
@@ -207,6 +217,7 @@ class _MiniJetScreenState extends State<MiniJetScreen> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal:5.0,vertical: 15 ),
                       child: TextFormField(
+                        cursorColor: headTitleColor,
                         controller: numberCon,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -236,6 +247,14 @@ class _MiniJetScreenState extends State<MiniJetScreen> {
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: Colors.grey, // Adjust the color to match the image
+                                width: 1.0, // Adjust the width to match the image
+                              ),
+
+                              borderRadius: BorderRadius.zero
+                          ),
+                          focusedBorder:OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: headTitleColor, // Adjust the color to match the image
                                 width: 1.0, // Adjust the width to match the image
                               ),
 

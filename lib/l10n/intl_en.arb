@@ -67,57 +67,17 @@
   "eqbli_citys": "Qibli Cities",
   "discovey_egypt": "Discover Egypt",
   "international": "International Trips",
-  "syahia":"tourist destinations",
   "why_chosse_us":"Why choose Super Jet?",
   "super_jet_categories": "Super Jet Categories",
   "home": "Home",
-  "fav": "Favorite",
+  "fav": "Favorites",
   "my_trip": "My Trips",
   "account": "Account",
   "bahary_citys": "Bahary Cities",
-  "alex_city": "Alexandria",
-  "alex_disc": "The bride of the Mediterranean and the most famous coastal city in Egypt, it has picturesque attractions that make it the appropriate destination for spending an enjoyable time, such as the Mastani Column, the Greek and Roman Museum, Montazah Gardens, Antoniades Gardens, Qaitbay Citadel, St. Mark’s Cathedral, and Waterfall Gardens.",
-  "matroh_city": "Marsa Matrouh",
-  "matroh_disc": "It is known as the city of charming beaches due to the beauty of the waters, the various beaches, and the diversity of attractions such as:. Cleopatra's Baths, Ramses II Temple, Salt Cave, Al-Umeed Reserve. You can also visit the summer circus and the Syrian Chinese market.",
-  "sahal_city": "North Coast",
-  "sahal_disc": "The northern coast is characterized by fresh water and sandy beaches, in addition to various activities such as an aqua park, concerts, barbecues, and many water sports.",
-  "alamin_city": "New Alamein",
-  "alamin_disc": "New Alamein is a new Egyptian city from the fourth generation cities in Egypt, located in Matrouh Governorate and administratively affiliated to the New Urban Communities Authority.",
-
-  "borsaid_city": "Port Said",
-  "borsaid_disc": "Port Said (The Valiant City) Port Said is distinguished by its various foods, such as madfouna and baklawis, in addition to many distinctive places such as the Salt Mountain, the Church of Saint Eugenie, and the Port Fouad Reserve and Beach.",
-  "suez_city": "Suez",
-  "suez_disc": "Suez, an Egyptian city, the capital of the Suez Governorate, located at the head of the Gulf of Suez, and the largest Egyptian city overlooking the Red Sea. The Suez Canal is named after the city.",
-
-  "qena_city": "Qena",
-  "qena_disc": "Qena Governorate is one of the southern governorates of Egypt, located about 600 km south of Cairo.",
-  "luxor_city": "Luxor",
-  "luxor_disc": "Luxor, known as the city of the hundred gates or the city of the sun, was previously known as Thebes and was the capital of Egypt in the Pharaonic era. It is located on the banks of the Nile River.",
-  "minya_city": "Minya",
-  "minya_disc": "Minya, an Egyptian city, is nicknamed the Bride of Upper Egypt, located in central Egypt on the western bank of the Nile River.",
-  "sohag_city": "Sohag",
-  "sohag_disc": "Sohag is a city located on the western bank of the Nile River in Egypt and the capital of Sohag Governorate.",
-  "asiut_city": "Asyut",
-  "asiut_disc": "Asyut is the largest city in Upper Egypt and the capital of Asyut Governorate, housing the first regional university (Asyut University).",
-  "syahia": "Tourist Destinations",
-  "sharm_city": "Sharm El Sheikh",
-  "sharm_desc": "Sharm El Sheikh is considered a global tourist attraction due to its distinctive natural and tourist environment, characterized by coral reefs, fish, and various activities such as diving and sailing.",
-  "nwabea_city": "Nuweiba",
-  "nwabea_desc": "Nuweiba is an Egyptian city that follows the South Sinai Governorate and overlooks the Gulf of Aqaba.",
-  "gardga_city": "Hurghada",
-  "gardga_desc": "Hurghada is the administrative capital of the Red Sea Governorate and occupies a coastal strip on the western shore of the Red Sea.",
-  "safaga_city": "Safaga",
-  "safaga_desc": "Safaga contains many tourist villages and is specialized in diving training, fishing competitions, and various recreational tourism activities.",
-  "jordan_country": "Jordan",
-  "jourdan_desc": "Superjet provides trips to Jordan, a country that mixes the majestic civilizations of the past and a bustling city. Whatever your inclinations, you will find what suits you in Jordan, the country of adventure, history, art, and distinctive food.",
-  "libya_country": "Libya",
-  "lipya_desc": "A mixture of deserts and vegetables. You can enjoy the charming natural atmosphere on the Green Mountain, which is full of trees and various agricultural crops, in addition to the distinctive nature of the climate."
-
-
-
-
-
-
-
-
+  "total_points": "Total Number Of Points Is",
+  "point": "Points",
+  "previous_trips": "Previous trips",
+  "register_now": "Register Now And Win",
+  "gift_point": "250 Points",
+  "syahia": "Tourist Destinations"
 }

@@ -730,16 +730,6 @@ class S {
     );
   }
 
-  /// `Tourist Destinations`
-  String get syahia {
-    return Intl.message(
-      'Tourist Destinations',
-      name: 'syahia',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Why choose Super Jet?`
   String get why_chosse_us {
     return Intl.message(
@@ -770,10 +760,10 @@ class S {
     );
   }
 
-  /// `Favorite`
+  /// `Favorites`
   String get fav {
     return Intl.message(
-      'Favorite',
+      'Favorites',
       name: 'fav',
       desc: '',
       args: [],
@@ -810,341 +800,61 @@ class S {
     );
   }
 
-  /// `Alexandria`
-  String get alex_city {
+  /// `Total Number Of Points Is`
+  String get total_points {
     return Intl.message(
-      'Alexandria',
-      name: 'alex_city',
+      'Total Number Of Points Is',
+      name: 'total_points',
       desc: '',
       args: [],
     );
   }
 
-  /// `The bride of the Mediterranean and the most famous coastal city in Egypt, it has picturesque attractions that make it the appropriate destination for spending an enjoyable time, such as the Mastani Column, the Greek and Roman Museum, Montazah Gardens, Antoniades Gardens, Qaitbay Citadel, St. Mark’s Cathedral, and Waterfall Gardens.`
-  String get alex_disc {
+  /// `Points`
+  String get point {
     return Intl.message(
-      'The bride of the Mediterranean and the most famous coastal city in Egypt, it has picturesque attractions that make it the appropriate destination for spending an enjoyable time, such as the Mastani Column, the Greek and Roman Museum, Montazah Gardens, Antoniades Gardens, Qaitbay Citadel, St. Mark’s Cathedral, and Waterfall Gardens.',
-      name: 'alex_disc',
+      'Points',
+      name: 'point',
       desc: '',
       args: [],
     );
   }
 
-  /// `Marsa Matrouh`
-  String get matroh_city {
+  /// `Previous trips`
+  String get previous_trips {
     return Intl.message(
-      'Marsa Matrouh',
-      name: 'matroh_city',
+      'Previous trips',
+      name: 'previous_trips',
       desc: '',
       args: [],
     );
   }
 
-  /// `It is known as the city of charming beaches due to the beauty of the waters, the various beaches, and the diversity of attractions such as:. Cleopatra's Baths, Ramses II Temple, Salt Cave, Al-Umeed Reserve. You can also visit the summer circus and the Syrian Chinese market.`
-  String get matroh_disc {
+  /// `Register Now And Win`
+  String get register_now {
     return Intl.message(
-      'It is known as the city of charming beaches due to the beauty of the waters, the various beaches, and the diversity of attractions such as:. Cleopatra\'s Baths, Ramses II Temple, Salt Cave, Al-Umeed Reserve. You can also visit the summer circus and the Syrian Chinese market.',
-      name: 'matroh_disc',
+      'Register Now And Win',
+      name: 'register_now',
       desc: '',
       args: [],
     );
   }
 
-  /// `North Coast`
-  String get sahal_city {
+  /// `250 Points`
+  String get gift_point {
     return Intl.message(
-      'North Coast',
-      name: 'sahal_city',
+      '250 Points',
+      name: 'gift_point',
       desc: '',
       args: [],
     );
   }
 
-  /// `The northern coast is characterized by fresh water and sandy beaches, in addition to various activities such as an aqua park, concerts, barbecues, and many water sports.`
-  String get sahal_disc {
+  /// `Tourist Destinations`
+  String get syahia {
     return Intl.message(
-      'The northern coast is characterized by fresh water and sandy beaches, in addition to various activities such as an aqua park, concerts, barbecues, and many water sports.',
-      name: 'sahal_disc',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `New Alamein`
-  String get alamin_city {
-    return Intl.message(
-      'New Alamein',
-      name: 'alamin_city',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `New Alamein is a new Egyptian city from the fourth generation cities in Egypt, located in Matrouh Governorate and administratively affiliated to the New Urban Communities Authority.`
-  String get alamin_disc {
-    return Intl.message(
-      'New Alamein is a new Egyptian city from the fourth generation cities in Egypt, located in Matrouh Governorate and administratively affiliated to the New Urban Communities Authority.',
-      name: 'alamin_disc',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Port Said`
-  String get borsaid_city {
-    return Intl.message(
-      'Port Said',
-      name: 'borsaid_city',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Port Said (The Valiant City) Port Said is distinguished by its various foods, such as madfouna and baklawis, in addition to many distinctive places such as the Salt Mountain, the Church of Saint Eugenie, and the Port Fouad Reserve and Beach.`
-  String get borsaid_disc {
-    return Intl.message(
-      'Port Said (The Valiant City) Port Said is distinguished by its various foods, such as madfouna and baklawis, in addition to many distinctive places such as the Salt Mountain, the Church of Saint Eugenie, and the Port Fouad Reserve and Beach.',
-      name: 'borsaid_disc',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Suez`
-  String get suez_city {
-    return Intl.message(
-      'Suez',
-      name: 'suez_city',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Suez, an Egyptian city, the capital of the Suez Governorate, located at the head of the Gulf of Suez, and the largest Egyptian city overlooking the Red Sea. The Suez Canal is named after the city.`
-  String get suez_disc {
-    return Intl.message(
-      'Suez, an Egyptian city, the capital of the Suez Governorate, located at the head of the Gulf of Suez, and the largest Egyptian city overlooking the Red Sea. The Suez Canal is named after the city.',
-      name: 'suez_disc',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Qena`
-  String get qena_city {
-    return Intl.message(
-      'Qena',
-      name: 'qena_city',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Qena Governorate is one of the southern governorates of Egypt, located about 600 km south of Cairo.`
-  String get qena_disc {
-    return Intl.message(
-      'Qena Governorate is one of the southern governorates of Egypt, located about 600 km south of Cairo.',
-      name: 'qena_disc',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Luxor`
-  String get luxor_city {
-    return Intl.message(
-      'Luxor',
-      name: 'luxor_city',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Luxor, known as the city of the hundred gates or the city of the sun, was previously known as Thebes and was the capital of Egypt in the Pharaonic era. It is located on the banks of the Nile River.`
-  String get luxor_disc {
-    return Intl.message(
-      'Luxor, known as the city of the hundred gates or the city of the sun, was previously known as Thebes and was the capital of Egypt in the Pharaonic era. It is located on the banks of the Nile River.',
-      name: 'luxor_disc',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Minya`
-  String get minya_city {
-    return Intl.message(
-      'Minya',
-      name: 'minya_city',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Minya, an Egyptian city, is nicknamed the Bride of Upper Egypt, located in central Egypt on the western bank of the Nile River.`
-  String get minya_disc {
-    return Intl.message(
-      'Minya, an Egyptian city, is nicknamed the Bride of Upper Egypt, located in central Egypt on the western bank of the Nile River.',
-      name: 'minya_disc',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Sohag`
-  String get sohag_city {
-    return Intl.message(
-      'Sohag',
-      name: 'sohag_city',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Sohag is a city located on the western bank of the Nile River in Egypt and the capital of Sohag Governorate.`
-  String get sohag_disc {
-    return Intl.message(
-      'Sohag is a city located on the western bank of the Nile River in Egypt and the capital of Sohag Governorate.',
-      name: 'sohag_disc',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Asyut`
-  String get asiut_city {
-    return Intl.message(
-      'Asyut',
-      name: 'asiut_city',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Asyut is the largest city in Upper Egypt and the capital of Asyut Governorate, housing the first regional university (Asyut University).`
-  String get asiut_disc {
-    return Intl.message(
-      'Asyut is the largest city in Upper Egypt and the capital of Asyut Governorate, housing the first regional university (Asyut University).',
-      name: 'asiut_disc',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Sharm El Sheikh`
-  String get sharm_city {
-    return Intl.message(
-      'Sharm El Sheikh',
-      name: 'sharm_city',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Sharm El Sheikh is considered a global tourist attraction due to its distinctive natural and tourist environment, characterized by coral reefs, fish, and various activities such as diving and sailing.`
-  String get sharm_desc {
-    return Intl.message(
-      'Sharm El Sheikh is considered a global tourist attraction due to its distinctive natural and tourist environment, characterized by coral reefs, fish, and various activities such as diving and sailing.',
-      name: 'sharm_desc',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Nuweiba`
-  String get nwabea_city {
-    return Intl.message(
-      'Nuweiba',
-      name: 'nwabea_city',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Nuweiba is an Egyptian city that follows the South Sinai Governorate and overlooks the Gulf of Aqaba.`
-  String get nwabea_desc {
-    return Intl.message(
-      'Nuweiba is an Egyptian city that follows the South Sinai Governorate and overlooks the Gulf of Aqaba.',
-      name: 'nwabea_desc',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Hurghada`
-  String get gardga_city {
-    return Intl.message(
-      'Hurghada',
-      name: 'gardga_city',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Hurghada is the administrative capital of the Red Sea Governorate and occupies a coastal strip on the western shore of the Red Sea.`
-  String get gardga_desc {
-    return Intl.message(
-      'Hurghada is the administrative capital of the Red Sea Governorate and occupies a coastal strip on the western shore of the Red Sea.',
-      name: 'gardga_desc',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Safaga`
-  String get safaga_city {
-    return Intl.message(
-      'Safaga',
-      name: 'safaga_city',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Safaga contains many tourist villages and is specialized in diving training, fishing competitions, and various recreational tourism activities.`
-  String get safaga_desc {
-    return Intl.message(
-      'Safaga contains many tourist villages and is specialized in diving training, fishing competitions, and various recreational tourism activities.',
-      name: 'safaga_desc',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Jordan`
-  String get jordan_country {
-    return Intl.message(
-      'Jordan',
-      name: 'jordan_country',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Superjet provides trips to Jordan, a country that mixes the majestic civilizations of the past and a bustling city. Whatever your inclinations, you will find what suits you in Jordan, the country of adventure, history, art, and distinctive food.`
-  String get jourdan_desc {
-    return Intl.message(
-      'Superjet provides trips to Jordan, a country that mixes the majestic civilizations of the past and a bustling city. Whatever your inclinations, you will find what suits you in Jordan, the country of adventure, history, art, and distinctive food.',
-      name: 'jourdan_desc',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Libya`
-  String get libya_country {
-    return Intl.message(
-      'Libya',
-      name: 'libya_country',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `A mixture of deserts and vegetables. You can enjoy the charming natural atmosphere on the Green Mountain, which is full of trees and various agricultural crops, in addition to the distinctive nature of the climate.`
-  String get lipya_desc {
-    return Intl.message(
-      'A mixture of deserts and vegetables. You can enjoy the charming natural atmosphere on the Green Mountain, which is full of trees and various agricultural crops, in addition to the distinctive nature of the climate.',
-      name: 'lipya_desc',
+      'Tourist Destinations',
+      name: 'syahia',
       desc: '',
       args: [],
     );

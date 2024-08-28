@@ -3,12 +3,14 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:superjet/screnns/show_details_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../colors/style_color.dart';
 import '../generated/l10n.dart';
 import 'account_screen.dart';
 import 'home_screen.dart';
+import 'my_trips_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({required this.changeLanguage, super.key});
@@ -73,7 +75,16 @@ class _HomeScreenState extends State<HomeScreen> {
               // Change the current screen based on selected index
               if (index == 0) {
                 _currentScreen = HomeWidgetScreen(); // Home screen
-              } else if (index == 3) {
+              }else if(index==1)
+                {
+                  _currentScreen=ShowDetailsScreen(
+                    pageTitle:S.of(context).fav,
+                  );
+                }else if(index==2)
+                {
+                  _currentScreen=MyTripsScreen();
+                }
+              else if (index == 3) {
                 _currentScreen = AccountScreen(changeLanguage: widget.changeLanguage,); // Account screen
               } else {
                 _currentScreen = HomeWidgetScreen(); // Default to home if other screens are not ready

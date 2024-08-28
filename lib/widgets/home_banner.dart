@@ -5,6 +5,7 @@ import 'package:superjet/screnns/book_screen.dart';
 
 import '../colors/style_color.dart';
 import '../generated/l10n.dart';
+import '../screnns/flyer_screen.dart';
 import '../screnns/mini_jet.dart';
 
 class HomeBanner extends StatelessWidget {
@@ -25,9 +26,15 @@ class HomeBanner extends StatelessWidget {
         // Centered logo
         Align(
           alignment: Alignment.center,
-          child: Image.asset(
-            "assets/images/superjet_logo_2.png",
-            width: 220,
+          child: Localizations.localeOf(context)
+              .languageCode ==
+              "ar"? Image.asset(
+           "assets/images/superjet_logo_2.png",
+            width: MediaQuery.of(context).size.height/5,
+            height: 120.h,
+          ):Image.asset(
+            "assets/images/super_jet_en.png",
+            width: MediaQuery.of(context).size.height/6,
             height: 120.h,
           ),
         ),
@@ -64,12 +71,12 @@ class HomeBanner extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset('assets/images/bus_icon.png',width: 40,height: 40,color: thirdTripColor,),
+                        Image.asset('assets/images/bus_icon.png',width: MediaQuery.of(context).size.width/10,height: MediaQuery.of(context).size.height/18,color: thirdTripColor,),
                         SizedBox(height: 10.h),
                         Text(
                           S.of(context).head_title,
                           style: GoogleFonts.cairo(
-                            fontSize: 10.sp,
+                            fontSize: MediaQuery.of(context).size.width*0.028.sp,
                             fontWeight: FontWeight.bold,
                           ),
                           textAlign: TextAlign.center,
@@ -102,12 +109,12 @@ class HomeBanner extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset('assets/images/bus_icon.png',width: 40,height: 40,color: thirdTripColor,),
+                        Image.asset('assets/images/bus_icon.png',width: MediaQuery.of(context).size.width/10,height: MediaQuery.of(context).size.height/18,color: thirdTripColor,),
                         SizedBox(height: 10.h),
                         Text(
                           S.of(context).to_private_trip,
                           style: GoogleFonts.cairo(
-                            fontSize: 10.sp,
+                            fontSize: MediaQuery.of(context).size.width*0.028.sp,
                             fontWeight: FontWeight.bold,
                           ),
                           textAlign: TextAlign.center,
@@ -118,35 +125,40 @@ class HomeBanner extends StatelessWidget {
                 ),
 
                 // Third container
-                Container(
-                  width: MediaQuery.of(context).size.width * 0.30,
-                  height: MediaQuery.of(context).size.height * 0.15,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 5,
-                        offset: Offset(0, 3), // Shadow position
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset('assets/images/bus_icon.png',width: 40,height: 40,color: thirdTripColor,),
-                      SizedBox(height: 10.h),
-                      Text(
-                        S.of(context).flyer,
-                        style: GoogleFonts.cairo(
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.bold,
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => FlyerScreen(),));
+                  },
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.30,
+                    height: MediaQuery.of(context).size.height * 0.15,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 5,
+                          offset: Offset(0, 3), // Shadow position
                         ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
+                      ],
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset('assets/images/bus_icon.png',width: MediaQuery.of(context).size.width/10,height: MediaQuery.of(context).size.height/18,color: thirdTripColor,),
+                        SizedBox(height: 10.h),
+                        Text(
+                          S.of(context).flyer,
+                          style: GoogleFonts.cairo(
+                            fontSize: MediaQuery.of(context).size.width*0.028.sp,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
