@@ -74,9 +74,11 @@ class HomeBanner extends StatelessWidget {
                         Image.asset('assets/images/bus_icon.png',width: MediaQuery.of(context).size.width/10,height: MediaQuery.of(context).size.height/18,color: thirdTripColor,),
                         SizedBox(height: 10.h),
                         Text(
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
                           S.of(context).head_title,
                           style: GoogleFonts.cairo(
-                            fontSize: MediaQuery.of(context).size.width*0.028.sp,
+                            fontSize: MediaQuery.of(context).size.height*0.0102.sp,
                             fontWeight: FontWeight.bold,
                           ),
                           textAlign: TextAlign.center,
@@ -112,9 +114,12 @@ class HomeBanner extends StatelessWidget {
                         Image.asset('assets/images/bus_icon.png',width: MediaQuery.of(context).size.width/10,height: MediaQuery.of(context).size.height/18,color: thirdTripColor,),
                         SizedBox(height: 10.h),
                         Text(
+                          maxLines: 3,
+
+                          overflow: TextOverflow.ellipsis,
                           S.of(context).to_private_trip,
                           style: GoogleFonts.cairo(
-                            fontSize: MediaQuery.of(context).size.width*0.028.sp,
+                            fontSize: MediaQuery.of(context).size.height*0.0102.sp,
                             fontWeight: FontWeight.bold,
                           ),
                           textAlign: TextAlign.center,
@@ -150,9 +155,12 @@ class HomeBanner extends StatelessWidget {
                         Image.asset('assets/images/bus_icon.png',width: MediaQuery.of(context).size.width/10,height: MediaQuery.of(context).size.height/18,color: thirdTripColor,),
                         SizedBox(height: 10.h),
                         Text(
+                          maxLines: 3,
+
+                          overflow: TextOverflow.ellipsis,
                           S.of(context).flyer,
                           style: GoogleFonts.cairo(
-                            fontSize: MediaQuery.of(context).size.width*0.028.sp,
+                            fontSize: MediaQuery.of(context).size.height*0.0102.sp,
                             fontWeight: FontWeight.bold,
                           ),
                           textAlign: TextAlign.center,

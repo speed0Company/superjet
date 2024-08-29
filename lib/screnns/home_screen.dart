@@ -8,6 +8,7 @@ import '../colors/style_color.dart';
 import '../generated/l10n.dart';
 import '../models/details_model.dart';
 import '../widgets/home_banner.dart';
+import 'exploer_egy_screen.dart';
 
 class HomeWidgetScreen extends StatelessWidget {
   const HomeWidgetScreen({
@@ -344,40 +345,45 @@ class HomeWidgetScreen extends StatelessWidget {
                       StaggeredGridTile.count(
                         crossAxisCellCount: 2,
                         mainAxisCellCount: 1,
-                        child: Stack(
-                          fit: StackFit.expand,
-                          children: [
-                            Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(5),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey.withOpacity(0.5),
-                                      spreadRadius: 2,
-                                      blurRadius: 5,
-                                      offset: Offset(0, 3), // Shadow position
-                                    ),
-                                  ],
-                                ),
-                                child: Image.asset(
-                                  "assets/images/discover_img.png",
-                                  fit: BoxFit.fill,
-                                )),
-                            Align(
-                                alignment: Alignment.bottomRight,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(10.0),
-                                  child: Text(
-                                    S.of(context).discovey_egypt,
-                                    style: GoogleFonts.cairo(
-                                      color: Colors.white,
-                                      fontSize: 12.sp,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => ExploerEgyScreen(),));
+                          },
+                          child: Stack(
+                            fit: StackFit.expand,
+                            children: [
+                              Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(5),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.grey.withOpacity(0.5),
+                                        spreadRadius: 2,
+                                        blurRadius: 5,
+                                        offset: Offset(0, 3), // Shadow position
+                                      ),
+                                    ],
                                   ),
-                                )),
-                          ],
+                                  child: Image.asset(
+                                    "assets/images/discover_img.png",
+                                    fit: BoxFit.fill,
+                                  )),
+                              Align(
+                                  alignment: Alignment.bottomRight,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Text(
+                                      S.of(context).discovey_egypt,
+                                      style: GoogleFonts.cairo(
+                                        color: Colors.white,
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  )),
+                            ],
+                          ),
                         ),
                       ),
                       StaggeredGridTile.count(

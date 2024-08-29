@@ -11,7 +11,7 @@ import 'edit_account_info.dart';
 class AccountScreen extends StatelessWidget {
   AccountScreen({required this.changeLanguage,super.key});
   final Function(Locale) changeLanguage;
-  final bool isLogin=true;
+  final bool isLogin=false;
 
   @override
   Widget build(BuildContext context) {

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../colors/style_color.dart';
+
 class CustomTextField extends StatefulWidget {
   const CustomTextField({
     super.key,
@@ -32,6 +34,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0,vertical: 10),
       child: TextFormField(
+        cursorColor: headTitleColor,
         maxLength: widget.maxLength!=null?widget.maxLength:null,
         validator: widget.validator,
         obscureText: isShown,
@@ -62,7 +65,15 @@ class _CustomTextFieldState extends State<CustomTextField> {
             ),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(30.0),
-            )
+            ),
+          focusedBorder:OutlineInputBorder(
+              borderSide: BorderSide(
+                color: headTitleColor, // Adjust the color to match the image
+                width: 1.0, // Adjust the width to match the image
+              ),
+            borderRadius: BorderRadius.circular(30.0),
+          ),
+
 
         ),
 

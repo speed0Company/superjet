@@ -35,7 +35,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "back": MessageLookupByLibrary.simpleMessage("back"),
         "bahary_citys": MessageLookupByLibrary.simpleMessage("Bahary Cities"),
         "book_now": MessageLookupByLibrary.simpleMessage("Book Now"),
+        "cameraOption": MessageLookupByLibrary.simpleMessage("Camera"),
         "chose_car": MessageLookupByLibrary.simpleMessage("Chose Car"),
+        "cityHint": MessageLookupByLibrary.simpleMessage("Enter the city"),
+        "cityLabel": MessageLookupByLibrary.simpleMessage("City"),
         "confirm_new_pass":
             MessageLookupByLibrary.simpleMessage("Confirm New Password"),
         "confirm_password":
@@ -43,6 +46,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "confirm_password_required": MessageLookupByLibrary.simpleMessage(
             "Confirmation password is required"),
         "contact_us": MessageLookupByLibrary.simpleMessage("Contact Us"),
+        "descriptionHint":
+            MessageLookupByLibrary.simpleMessage("Enter description"),
         "discovey_egypt":
             MessageLookupByLibrary.simpleMessage("Discover Egypt"),
         "done": MessageLookupByLibrary.simpleMessage("Done"),
@@ -57,7 +62,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Please enter your name"),
         "error_form_filed_phone_number": MessageLookupByLibrary.simpleMessage(
             "Please enter your phone number"),
+        "explorerEgyTitle": MessageLookupByLibrary.simpleMessage(
+            "Share your experience discovering Egypt"),
         "fav": MessageLookupByLibrary.simpleMessage("Favorites"),
+        "firstNameHint":
+            MessageLookupByLibrary.simpleMessage("Enter your first name"),
+        "firstNameLabel": MessageLookupByLibrary.simpleMessage("First Name"),
         "flyer":
             MessageLookupByLibrary.simpleMessage("Recurrent Passenger Program"),
         "flyer_txt": MessageLookupByLibrary.simpleMessage(
@@ -65,6 +75,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "from": MessageLookupByLibrary.simpleMessage("From"),
         "from_title":
             MessageLookupByLibrary.simpleMessage("Select Travel City"),
+        "galleryOption": MessageLookupByLibrary.simpleMessage("Gallery"),
         "gift_point": MessageLookupByLibrary.simpleMessage("250 Points"),
         "head_title": MessageLookupByLibrary.simpleMessage("Book Your Trip"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
@@ -72,6 +83,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("International Trips"),
         "invalid_email": MessageLookupByLibrary.simpleMessage(
             "Please enter a valid email address"),
+        "lastNameHint":
+            MessageLookupByLibrary.simpleMessage("Enter your last name"),
+        "lastNameLabel": MessageLookupByLibrary.simpleMessage("Last Name"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "login_account": MessageLookupByLibrary.simpleMessage("Login Account"),
         "logout": MessageLookupByLibrary.simpleMessage("Log Out"),
@@ -87,6 +101,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "name_too_short": MessageLookupByLibrary.simpleMessage(
             "Name should be at least 4 characters"),
         "new_pass": MessageLookupByLibrary.simpleMessage("New Password"),
+        "no_fav": MessageLookupByLibrary.simpleMessage("Nothing in Favorite"),
         "not_found_trip": MessageLookupByLibrary.simpleMessage(
             "There are no trips at the selected station"),
         "number_of_set_title":
@@ -119,12 +134,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "search_for_private_trip":
             MessageLookupByLibrary.simpleMessage("Search for a trip"),
+        "selectImageSourceText": MessageLookupByLibrary.simpleMessage(
+            "Where would you like to load the image from?"),
+        "selectImageSourceTitle":
+            MessageLookupByLibrary.simpleMessage("Select Image Source"),
         "select_date": MessageLookupByLibrary.simpleMessage("Select Date"),
         "selected_seats":
             MessageLookupByLibrary.simpleMessage("Selected Seats"),
         "sets_title":
             MessageLookupByLibrary.simpleMessage("Please Select Seat(s)"),
         "show_trip": MessageLookupByLibrary.simpleMessage("Show Trips"),
+        "submitButton": MessageLookupByLibrary.simpleMessage("Submit"),
         "super_jet_categories":
             MessageLookupByLibrary.simpleMessage("Super Jet Categories"),
         "syahia": MessageLookupByLibrary.simpleMessage("Tourist Destinations"),
@@ -139,6 +159,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "total_points":
             MessageLookupByLibrary.simpleMessage("Total Number Of Points Is"),
         "travel_date": MessageLookupByLibrary.simpleMessage("Travel Date"),
+        "uploadImageButton":
+            MessageLookupByLibrary.simpleMessage("Choose Image"),
+        "uploadImageLabel":
+            MessageLookupByLibrary.simpleMessage("Upload Image"),
         "user_name": MessageLookupByLibrary.simpleMessage("Name"),
         "why_chosse_us":
             MessageLookupByLibrary.simpleMessage("Why choose Super Jet?")

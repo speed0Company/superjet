@@ -126,7 +126,29 @@ class _ShowDetailsScreenState extends State<ShowDetailsScreen> {
                 ),
               ),
             ),
-            Expanded(
+            isFav&&favorites.length==0?Expanded(
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding:  EdgeInsets.only(top: MediaQuery.of(context).size.height/5),
+                  child: Center(child: Column(
+                    children: [
+                      Image.asset("assets/images/fav_strock_icon.png",color: Colors.grey.withOpacity(0.6),width: 220.w,),
+                      SizedBox(height: 20,),
+                      Text(S.of(context).no_fav,
+                      style: GoogleFonts.cairo(
+                          color:Colors.grey.withOpacity(0.6),
+                          fontSize:
+                          17.sp, // Adjust the size as needed
+                          // height: 1.5,
+                          fontWeight: FontWeight
+                              .bold // Line height for better readability
+                      ),
+                      )
+                    ],
+                  ),),
+                ),
+              ),
+            ): Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 13.0, vertical: 8),
                 child: ListView.separated(

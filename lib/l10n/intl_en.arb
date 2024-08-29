@@ -79,5 +79,21 @@
   "previous_trips": "Previous trips",
   "register_now": "Register Now And Win",
   "gift_point": "250 Points",
-  "syahia": "Tourist Destinations"
+  "syahia": "Tourist Destinations",
+  "no_fav": "Nothing in Favorite",
+  "explorerEgyTitle": "Share your experience discovering Egypt",
+  "firstNameLabel": "First Name",
+  "firstNameHint": "Enter your first name",
+  "lastNameLabel": "Last Name",
+  "lastNameHint": "Enter your last name",
+  "cityLabel": "City",
+  "cityHint": "Enter the city",
+  "uploadImageLabel": "Upload Image",
+  "uploadImageButton": "Choose Image",
+  "descriptionHint": "Enter description",
+  "submitButton": "Submit",
+  "selectImageSourceTitle": "Select Image Source",
+  "selectImageSourceText": "Where would you like to load the image from?",
+  "cameraOption": "Camera",
+  "galleryOption": "Gallery"
 }

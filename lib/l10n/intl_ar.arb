@@ -79,5 +79,23 @@
   "previous_trips": "الرحلات السابقه",
   "register_now": "سجل دلوقتى و اكسب",
   "gift_point": "٢٥٠ نقطة",
-  "syahia": "الوجهات السياحية"
+  "syahia": "الوجهات السياحية",
+  "no_fav": "لا شيء في المفضلة",
+  "explorerEgyTitle": "شاركنا تجربتك باكتشاف مصر",
+  "firstNameLabel": "الاسم الاول",
+  "firstNameHint": "ادخل الاسم الاول",
+  "lastNameLabel": "الاسم الثانى",
+  "lastNameHint": "ادخل الاسم الثانى",
+  "cityLabel": "المدينة",
+  "cityHint": "ادخل المدينة",
+  "uploadImageLabel": "ارفع صورة المكان",
+  "uploadImageButton": "اختار الصورة",
+  "descriptionHint": "ادخل الوصف",
+  "submitButton": "رفع",
+  "selectImageSourceTitle": "اختر مصدر الصورة",
+  "selectImageSourceText": "من أين تريد تحميل الصورة؟",
+  "cameraOption": "الكاميرا",
+  "galleryOption": "الاستوديو"
+
+
 }

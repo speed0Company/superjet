@@ -35,7 +35,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "back": MessageLookupByLibrary.simpleMessage("الرجوع"),
         "bahary_citys": MessageLookupByLibrary.simpleMessage("الوجه البحرى"),
         "book_now": MessageLookupByLibrary.simpleMessage("احجز الآن"),
+        "cameraOption": MessageLookupByLibrary.simpleMessage("الكاميرا"),
         "chose_car": MessageLookupByLibrary.simpleMessage("اختار السيارة"),
+        "cityHint": MessageLookupByLibrary.simpleMessage("ادخل المدينة"),
+        "cityLabel": MessageLookupByLibrary.simpleMessage("المدينة"),
         "confirm_new_pass":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور الجديدة"),
         "confirm_password":
@@ -43,6 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "confirm_password_required":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور مطلوب"),
         "contact_us": MessageLookupByLibrary.simpleMessage("تواصل معنا"),
+        "descriptionHint": MessageLookupByLibrary.simpleMessage("ادخل الوصف"),
         "discovey_egypt": MessageLookupByLibrary.simpleMessage("اكتشف مصر"),
         "done": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "edit_account_info":
@@ -57,18 +61,27 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("الرجاء إدخال اسمك"),
         "error_form_filed_phone_number":
             MessageLookupByLibrary.simpleMessage("الرجاء إدخال رقم هاتفك"),
+        "explorerEgyTitle":
+            MessageLookupByLibrary.simpleMessage("شاركنا تجربتك باكتشاف مصر"),
         "fav": MessageLookupByLibrary.simpleMessage("المفضلة"),
+        "firstNameHint":
+            MessageLookupByLibrary.simpleMessage("ادخل الاسم الاول"),
+        "firstNameLabel": MessageLookupByLibrary.simpleMessage("الاسم الاول"),
         "flyer": MessageLookupByLibrary.simpleMessage("برنامج المسافر الدائم"),
         "flyer_txt": MessageLookupByLibrary.simpleMessage(
             "خدمة متميزة تُقدم لعملاء سوبرجيت، يقوم العميل بالتسجيل عن طريق البريد الإلكتروني فيحصل على 250 نقطة نتيجة للتسجيل، ويزيد عدد النقاط مع كل رحلة يقوم بها العميل ويمكنه ذلك الحصول على مزايا مثل نسبة خصم على الرحلات ورحلات مجانية."),
         "from": MessageLookupByLibrary.simpleMessage("من"),
         "from_title": MessageLookupByLibrary.simpleMessage("حدد مدينة السفر"),
+        "galleryOption": MessageLookupByLibrary.simpleMessage("الاستوديو"),
         "gift_point": MessageLookupByLibrary.simpleMessage("٢٥٠ نقطة"),
         "head_title": MessageLookupByLibrary.simpleMessage("احجز تذكرتك"),
         "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "international": MessageLookupByLibrary.simpleMessage("رحلات دولية"),
         "invalid_email": MessageLookupByLibrary.simpleMessage(
             "يرجى إدخال بريد إلكتروني صالح"),
+        "lastNameHint":
+            MessageLookupByLibrary.simpleMessage("ادخل الاسم الثانى"),
+        "lastNameLabel": MessageLookupByLibrary.simpleMessage("الاسم الثانى"),
         "login": MessageLookupByLibrary.simpleMessage("دخول"),
         "login_account": MessageLookupByLibrary.simpleMessage("دخول حساب"),
         "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
@@ -83,6 +96,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "name_too_short": MessageLookupByLibrary.simpleMessage(
             "يجب أن يكون الاسم 4 أحرف على الأقل"),
         "new_pass": MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
+        "no_fav": MessageLookupByLibrary.simpleMessage("لا شيء في المفضلة"),
         "not_found_trip": MessageLookupByLibrary.simpleMessage(
             "لا يوجد رحلات في المحطة المختارة"),
         "number_of_set_title":
@@ -116,12 +130,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "save": MessageLookupByLibrary.simpleMessage("حفظ"),
         "search_for_private_trip":
             MessageLookupByLibrary.simpleMessage("ابحث عن رحلة"),
+        "selectImageSourceText":
+            MessageLookupByLibrary.simpleMessage("من أين تريد تحميل الصورة؟"),
+        "selectImageSourceTitle":
+            MessageLookupByLibrary.simpleMessage("اختر مصدر الصورة"),
         "select_date": MessageLookupByLibrary.simpleMessage("أختار التاريخ"),
         "selected_seats":
             MessageLookupByLibrary.simpleMessage("المقاعد المختارة"),
         "sets_title": MessageLookupByLibrary.simpleMessage(
             "من فضلك اختر المقعد / المقاعد"),
         "show_trip": MessageLookupByLibrary.simpleMessage("أعرض الرحلات"),
+        "submitButton": MessageLookupByLibrary.simpleMessage("رفع"),
         "super_jet_categories":
             MessageLookupByLibrary.simpleMessage("فئات سوبر چيت"),
         "syahia": MessageLookupByLibrary.simpleMessage("الوجهات السياحية"),
@@ -135,6 +154,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "total_points":
             MessageLookupByLibrary.simpleMessage("اجمالى عدد النقاط"),
         "travel_date": MessageLookupByLibrary.simpleMessage("تاريخ السفر"),
+        "uploadImageButton":
+            MessageLookupByLibrary.simpleMessage("اختار الصورة"),
+        "uploadImageLabel":
+            MessageLookupByLibrary.simpleMessage("ارفع صورة المكان"),
         "user_name": MessageLookupByLibrary.simpleMessage("الإسم"),
         "why_chosse_us":
             MessageLookupByLibrary.simpleMessage("ليه تختار سوبر چيت؟")

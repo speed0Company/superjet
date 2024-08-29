@@ -859,6 +859,166 @@ class S {
       args: [],
     );
   }
+
+  /// `Nothing in Favorite`
+  String get no_fav {
+    return Intl.message(
+      'Nothing in Favorite',
+      name: 'no_fav',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Share your experience discovering Egypt`
+  String get explorerEgyTitle {
+    return Intl.message(
+      'Share your experience discovering Egypt',
+      name: 'explorerEgyTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `First Name`
+  String get firstNameLabel {
+    return Intl.message(
+      'First Name',
+      name: 'firstNameLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your first name`
+  String get firstNameHint {
+    return Intl.message(
+      'Enter your first name',
+      name: 'firstNameHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Last Name`
+  String get lastNameLabel {
+    return Intl.message(
+      'Last Name',
+      name: 'lastNameLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your last name`
+  String get lastNameHint {
+    return Intl.message(
+      'Enter your last name',
+      name: 'lastNameHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `City`
+  String get cityLabel {
+    return Intl.message(
+      'City',
+      name: 'cityLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the city`
+  String get cityHint {
+    return Intl.message(
+      'Enter the city',
+      name: 'cityHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upload Image`
+  String get uploadImageLabel {
+    return Intl.message(
+      'Upload Image',
+      name: 'uploadImageLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose Image`
+  String get uploadImageButton {
+    return Intl.message(
+      'Choose Image',
+      name: 'uploadImageButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter description`
+  String get descriptionHint {
+    return Intl.message(
+      'Enter description',
+      name: 'descriptionHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit`
+  String get submitButton {
+    return Intl.message(
+      'Submit',
+      name: 'submitButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Image Source`
+  String get selectImageSourceTitle {
+    return Intl.message(
+      'Select Image Source',
+      name: 'selectImageSourceTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Where would you like to load the image from?`
+  String get selectImageSourceText {
+    return Intl.message(
+      'Where would you like to load the image from?',
+      name: 'selectImageSourceText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Camera`
+  String get cameraOption {
+    return Intl.message(
+      'Camera',
+      name: 'cameraOption',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gallery`
+  String get galleryOption {
+    return Intl.message(
+      'Gallery',
+      name: 'galleryOption',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
