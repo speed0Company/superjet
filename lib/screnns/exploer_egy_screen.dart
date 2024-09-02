@@ -130,32 +130,47 @@ class _ExploerEgyScreenState extends State<ExploerEgyScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffFCF3E8),
-      appBar: AppBar(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(20),
-            bottomRight: Radius.circular(20),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(55),
+        child: Container(
+          decoration:  BoxDecoration(
+            color: Colors.white, // Background color of the AppBar
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.25), // Shadow color
+                offset: Offset(0, 4), // X and Y offset of the shadow
+                blurRadius: 10, // Blur radius for the shadow
+              ),
+            ],
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(20),
+              bottomRight: Radius.circular(20),
+            ),
+          ),
+          child: AppBar(
+            notificationPredicate: (_) => false,
+
+            surfaceTintColor: Colors.transparent,
+            leading: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: Icon(CupertinoIcons.back),
+            ),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),bottomRight:  Radius.circular(20))
+            ),
+            backgroundColor: Colors.white,
+            shadowColor: Colors.black,
+            // elevation: 4,
+            title: Image.asset(
+              Localizations.localeOf(context).languageCode=="ar"?"assets/images/superjet_logo.png":"assets/images/logo_english.png",
+              width: 90,
+              height: 90,
+            ),
+            centerTitle: true,
           ),
         ),
-        backgroundColor: Colors.white,
-        shadowColor: Colors.black,
-        elevation: 4,
-        leading:  IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(CupertinoIcons.back),
-        ),
-        title: Image.asset(
-          Localizations.localeOf(context)
-              .languageCode ==
-              "ar"
-              ? "assets/images/superjet_logo.png"
-              : "assets/images/logo_english.png",
-          width: 90,
-          height: 90,
-        ),
-        centerTitle: true,
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.only(bottom: 10.h),
@@ -390,6 +405,7 @@ class _ExploerEgyScreenState extends State<ExploerEgyScreen> {
 
                       SizedBox(height: 16),
                       ElevatedButton(
+
                         onPressed: () {
                           // Add your form submission logic here
                         },
@@ -405,6 +421,7 @@ class _ExploerEgyScreenState extends State<ExploerEgyScreen> {
                           style: GoogleFonts.cairo(
                             fontSize: 12.sp,
                             fontWeight: FontWeight.bold,
+                            color: Colors.white
                           ),
                         ),
                       ),

@@ -33,9 +33,8 @@ class _HomeScreenState extends State<HomeScreen> {
           String contact = "+201220840565";
           String text = '';
           String androidUrl = "https://api.whatsapp.com/send/?phone=${contact}&text=${text}";
-          String iosUrl = "https://wa.me/$contact?text=${Uri.parse(text)}";
-
-          String webUrl = 'https://api.whatsapp.com/send/?phone=$contact&text=hi';
+          String iosUrl = "https://api.whatsapp.com/send/?phone=${contact}&text=${text}";
+          String webUrl = 'https://api.whatsapp.com/send/?phone=${contact}&text=${text}';
 
           try {
             if (Platform.isIOS) {

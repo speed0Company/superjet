@@ -1,18 +1,30 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:superjet/colors/style_color.dart';
 import 'package:superjet/generated/l10n.dart';
+import 'package:superjet/services/login_api.dart';
+import '../../widgets/alert_widget.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custome_text_filed.dart';
 
-class CreateAccountScreen extends StatelessWidget {
+class CreateAccountScreen extends StatefulWidget {
   CreateAccountScreen({super.key});
 
+  @override
+  State<CreateAccountScreen> createState() => _CreateAccountScreenState();
+}
+
+class _CreateAccountScreenState extends State<CreateAccountScreen> {
   final TextEditingController emailCon = TextEditingController();
+
   final TextEditingController nameCon = TextEditingController();
+
   final TextEditingController confirmPassCon = TextEditingController();
+
   final TextEditingController passwordCon = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
+  bool isLoading=false;
 
   @override
   Widget build(BuildContext context) {
@@ -87,11 +99,32 @@ class CreateAccountScreen extends StatelessWidget {
                 },
               ),
               CustomButton(
+                isLoading: isLoading,
                 text: S.of(context).register,
-                onTap: () {
+                onTap: ()async {
+
                   if (_formKey.currentState!.validate()) {
-                    // Perform registration logic
+                    isLoading=true;
+                    setState(() {
+                    });
+                    try{
+                      await LoginApi().registerUser(nameCon.text, emailCon.text, passwordCon.text, confirmPassCon.text);
+
+                    }catch(e)
+                  {
+                    showAlertDialog(
+                        context,
+                        e.toString()
+                    );
                   }
+
+
+
+                    isLoading=false;
+                    setState(() {
+                    });
+                  }
+
                 },
               )
             ],

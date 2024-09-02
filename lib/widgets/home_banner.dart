@@ -78,7 +78,7 @@ class HomeBanner extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                           S.of(context).head_title,
                           style: GoogleFonts.cairo(
-                            fontSize: MediaQuery.of(context).size.height*0.0102.sp,
+                            fontSize: MediaQuery.of(context).size.height*0.012.sp,
                             fontWeight: FontWeight.bold,
                           ),
                           textAlign: TextAlign.center,
@@ -119,7 +119,7 @@ class HomeBanner extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                           S.of(context).to_private_trip,
                           style: GoogleFonts.cairo(
-                            fontSize: MediaQuery.of(context).size.height*0.0102.sp,
+                            fontSize: MediaQuery.of(context).size.height*0.012.sp,
                             fontWeight: FontWeight.bold,
                           ),
                           textAlign: TextAlign.center,
@@ -160,7 +160,7 @@ class HomeBanner extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                           S.of(context).flyer,
                           style: GoogleFonts.cairo(
-                            fontSize: MediaQuery.of(context).size.height*0.0102.sp,
+                            fontSize: MediaQuery.of(context).size.height*0.011.sp,
                             fontWeight: FontWeight.bold,
                           ),
                           textAlign: TextAlign.center,

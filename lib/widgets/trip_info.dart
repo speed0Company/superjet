@@ -12,7 +12,6 @@ class TripsInfo extends StatelessWidget {
   final String cityTo;
   final String busType;
   final int numberOfTickets;
-  final int points;
   final String date;
   final String time;
   final String status;
@@ -23,10 +22,9 @@ class TripsInfo extends StatelessWidget {
     required this.cityTo,
     required this.busType,
     required this.numberOfTickets,
-    required this.points,
     required this.date,
     required this.time,
-    required this.status
+    required this.status,
   });
 
   @override
@@ -155,7 +153,7 @@ class TripsInfo extends StatelessWidget {
                       time,
                       style:  GoogleFonts.cairo(
                         color: Colors.grey,
-                        fontSize: MediaQuery.of(context).size.width/32,
+                        fontSize: MediaQuery.of(context).size.width/35,
                         fontWeight: FontWeight
                             .bold, // Adjust the size as needed
 
@@ -163,7 +161,7 @@ class TripsInfo extends StatelessWidget {
                     ),
                     SizedBox(width: 10),
 
-                    Image.asset("assets/images/time.png",width: MediaQuery.of(context).size.width/18,height: 22,)
+                    Image.asset("assets/images/time.png",width: MediaQuery.of(context).size.width/20,height: 22,)
 
                   ],
                 ),

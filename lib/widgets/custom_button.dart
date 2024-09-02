@@ -7,10 +7,12 @@ import '../colors/style_color.dart';
 class CustomButton extends StatelessWidget {
   CustomButton({
     required this.onTap,
-    required this.text
+    required this.text,
+    this.isLoading
   });
   final void Function()? onTap;
   final String text;
+  bool? isLoading;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -20,7 +22,9 @@ class CustomButton extends StatelessWidget {
         child: Container(
           child: Center(child: Padding(
             padding: const EdgeInsets.all(12.0),
-            child: Text(text,style: GoogleFonts.cairo(
+            child: isLoading==true?CircularProgressIndicator(
+              color: Colors.white,
+            ):Text(text,style: GoogleFonts.cairo(
                 fontSize: 17.sp,
                 color: Colors.white,
                 fontWeight: FontWeight.bold

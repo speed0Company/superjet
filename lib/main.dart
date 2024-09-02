@@ -1,14 +1,10 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:splashify/splashify.dart';
 import 'package:superjet/colors/style_color.dart';
-import 'package:superjet/screnns/book_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:superjet/screnns/home_container.dart';
-
 import 'generated/l10n.dart';
 
 void main()async {
@@ -54,7 +50,7 @@ class _MyAppState extends State<MyApp> {
           GlobalCupertinoLocalizations.delegate,
         ],
         theme: ThemeData(
-          colorScheme:ColorScheme.light(primary: Colors.white)
+          colorScheme:ColorScheme.light(primary: headTitleColor)
         ),
         supportedLocales: S.delegate.supportedLocales,
         debugShowCheckedModeBanner: false,
@@ -62,7 +58,7 @@ class _MyAppState extends State<MyApp> {
           imagePath:_locale.languageCode=="ar"?'assets/images/superjet_logo.png':"assets/images/logo_english.png",
           imageFadeIn: true,
           // colorBlendAnimation: headTitleColor,
-          navigateDuration: 5,
+          navigateDuration: 3,
           imageSize: MediaQuery.of(context).size.height/4,
           titleColor: headTitleColor,
           colorizeTileAnimationColors: [

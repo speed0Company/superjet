@@ -45,37 +45,39 @@ class HomeWidgetScreen extends StatelessWidget {
                           horizontal: 20, vertical: 10),
                       child: Column(
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Expanded(
-                                flex: 1,
-                                child: Image.asset(
-                                  width: 70.w,
-                                  height: 70.h,
-                                  Localizations.localeOf(context)
-                                      .languageCode ==
-                                      "ar" ?"assets/images/flyer_ar.png":"assets/images/flyer_en.png",
-                                  fit: BoxFit.cover,
+                          IntrinsicHeight(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Expanded(
+                            
+                                  flex: 1,
+                                  child: Image.asset(
 
-
-                                ),
-                              ),
-                              SizedBox(
-                                  width: 10.w), // Space between text and image
-                              Expanded(
-                                flex: 2,
-                                child: Text(
-                                  S.of(context).flyer_txt,
-                                  style: GoogleFonts.cairo(
-                                    fontSize: 9.sp, // Adjust the size as needed
-                                    height:
-                                        1.5, // Line height for better readability
+                                    Localizations.localeOf(context)
+                                        .languageCode ==
+                                        "ar" ?"assets/images/flyer_ar.png":"assets/images/flyer_en.png",
+                                    fit: BoxFit. cover,
+                            
+                            
                                   ),
                                 ),
-                              ),
-                            ],
+                                SizedBox(
+                                    width: 10.w), // Space between text and image
+                                Expanded(
+                                  flex: 1,
+                                  child: Text(
+                                    S.of(context).flyer_txt,
+                                    style: GoogleFonts.cairo(
+                                      fontSize: 9.sp, // Adjust the size as needed
+                                      height:
+                                          1.5, // Line height for better readability
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
@@ -185,14 +187,14 @@ class HomeWidgetScreen extends StatelessWidget {
                                   pageTitle: S.of(context).qana_citys,
                                   data: [
                                     DetailsModel(
-                                      image: "assets/images/borsaid.png",
+                                      image: "assets/images/borsaid.jpg",
                                       cityAr: 'بورسعيد',
                                       cityEn: 'Port Said',
                                       discAr: 'بورسعيد (المدينة الباسلة) تتميز بورسعيد بأطعمتها المختلفة متل المدفونة والبكلويز، بالإضافة للعديد من الأماكن المميزة مثل جبل الملح، وكنيسة سانت اوجيني، ومحمية وشاطئ بورفؤاد.',
                                       discEn: "Port Said (the valiant city) is characterized by its variety in food such as El Madfona and El Baklwiz, as well as many distinctive places such as Mount Salt, St Eugenie's Church, Purfod Reserve and Beach.",
                                     ),
                                     DetailsModel(
-                                      image: "assets/images/suze.png",
+                                      image: "assets/images/suze.jpg",
                                       cityAr: 'السويس',
                                       cityEn: 'Suez',
                                       discAr: 'يطلق عليها اسم بلد الغريب وتتميز ببيئتها المختلفة حيث يوجد جبل عتاقة وخليج السويس وعيون موسى بالإضافة للمزارات الدينية مثل دير الأنبا انطونيوس والأنبا بولا.',
