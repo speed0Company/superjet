@@ -1,11 +1,11 @@
 
 import 'package:dio/dio.dart';
 import 'package:superjet/consts/consts.dart';
-import 'package:superjet/generated/l10n.dart';
 
-class LoginApi {
-  final Dio _dio=Dio();
-  LoginApi() {
+
+class RegisterApi {
+final Dio _dio=Dio();
+  RegisterApi() {
     // Set default options if needed
     _dio.options.baseUrl = baseUrl;
     _dio.options.headers = {
@@ -15,13 +15,15 @@ class LoginApi {
     };
   }
 
-  Future<Map<String,dynamic>> LoginUser( String email, String password,) async {
+  Future<Map<String,dynamic>> registerUser(String name, String email, String password, String confirmPassword) async {
     try {
-      final response = await _dio.post(
-        '/login',
+      final response = await _dio.get(
+        '/register',
         data: {
+          'name': name,
           'email': email,
           'password': password,
+          'password_confirmation': confirmPassword,
         },
       );
 

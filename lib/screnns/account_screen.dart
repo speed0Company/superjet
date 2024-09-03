@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,16 +10,48 @@ import '../generated/l10n.dart';
 import 'auth/login_screen.dart';
 import 'edit_account_info.dart';
 
-class AccountScreen extends StatelessWidget {
-  AccountScreen({required this.changeLanguage,super.key});
+class AccountScreen extends StatefulWidget {
+  AccountScreen({required this.changeLanguage, super.key});
   final Function(Locale) changeLanguage;
-  final bool isLogin=false;
+
+  @override
+  State<AccountScreen> createState() => _AccountScreenState();
+}
+
+class _AccountScreenState extends State<AccountScreen> {
+  bool? isLogin;
+  bool isLoading = true; // Add a loading state
+  Map<String,dynamic>? userData;
+
+  void checkLoginStatus() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String? token = prefs.getString('token');
+    String? userString = prefs.getString('user');
+    print(userString);
+    if (userString != null) {
+      userData  = jsonDecode(userString);
+      // Now you can use the user object as needed
+    }
+
+    // Set isLogin based on whether the token is null
+    isLogin = token != null;
+
+    // Update loading state
+    setState(() {
+      isLoading = false; // Set loading to false once the check is done
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    checkLoginStatus(); // Call the checkLoginStatus method
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffFCF3E8),
-
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
         child: Container(
@@ -54,125 +88,131 @@ class AccountScreen extends StatelessWidget {
           ),
         ),
       ),
-
       body: SafeArea(
-        child: SingleChildScrollView(
+        child: isLoading // Check if loading is true
+            ? Center(child: CircularProgressIndicator()) // Show loading indicator
+            : SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.only(top: 20.0),
             child: Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  isLogin?Stack(
-                    children: [
-                      Column(
+                  isLogin == true
+                      ? Column(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                            padding:
+                            const EdgeInsets.symmetric(
+                                horizontal: 30.0),
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                             children: [
-                               Container(
-                                 decoration: BoxDecoration(
-                                   color: Color(0xffcf9a2b),
-                                   borderRadius: BorderRadius.circular(100),
-
-                                 ),
-                                 child: Padding(
-                                   padding: const EdgeInsets.all(20.0),
-                                   child: Image.asset('assets/images/profile_icon.png',width: 40,height: 40,),
-                                 ),
-                               ),
-                               SizedBox(width: 20,),
-                               Column(
-                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                 children: [
-                                   Text(
-                                     "الاسم",
-                                     textAlign: TextAlign.center,
-                                     style: GoogleFonts.cairo(
-                                         fontSize: 17.sp,
-                                         fontWeight: FontWeight.bold,
-                                         color: Colors.black
-                                     ),
-                                   ),Text(
-                                     "test@test.com",
-                                     textAlign: TextAlign.center,
-                                     style: GoogleFonts.cairo(
-                                         fontSize: 14.sp,
-                                         fontWeight: FontWeight.w500,
-                                         color: Colors.grey
-                                     ),
-                                   ),
-                                 ],
-                               )
-                             ],
+                              mainAxisAlignment:
+                              MainAxisAlignment.start,
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: Color(0xffcf9a2b),
+                                    borderRadius:
+                                    BorderRadius.circular(100),
+                                  ),
+                                  child: Padding(
+                                    padding:
+                                    const EdgeInsets.all(20.0),
+                                    child: Image.asset(
+                                        'assets/images/profile_icon.png',
+                                        width: 40,
+                                        height: 40),
+                                  ),
+                                ),
+                                SizedBox(width: 20),
+                                Column(
+                                  crossAxisAlignment:
+                                  CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      userData?['user']['name'],
+                                      textAlign: TextAlign.center,
+                                      style: GoogleFonts.cairo(
+                                          fontSize: 17.sp,
+                                          fontWeight:
+                                          FontWeight.bold,
+                                          color: Colors.black),
+                                    ),
+                                    Text(
+                                      userData?['user']['email'],
+                                      textAlign: TextAlign.center,
+                                      style: GoogleFonts.cairo(
+                                          fontSize: 14.sp,
+                                          fontWeight:
+                                          FontWeight.w500,
+                                          color: Colors.grey),
+                                    ),
+                                  ],
+                                )
+                              ],
                             ),
                           ),
-                          SizedBox(height: 30,),
-                          Divider(
-                            color: Colors.grey,
-                          ),
+                          SizedBox(height: 30),
+                          Divider(color: Colors.grey),
                         ],
-                      ),
-                      Positioned(
-                          bottom: 40,
-                          left: Localizations.localeOf(context).languageCode == 'en'?17*4.4:null,
-                          right: Localizations.localeOf(context).languageCode == 'ar'?17:null,
-                          child:IconButton(
-                            onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => EditAccountInfo(
-                                name: "Name",
-                                email: "test@test.com",
-                              ),));
-                            },
-                            icon:  Image.asset("assets/images/edit_profile.png",width: 25,height: 25,)),
-                          )
-                    ],
-                  )
-                      :GestureDetector(
-                    onTap: (){
-                      Navigator.push(context,MaterialPageRoute(builder: (context) => LoginScreen(),) );
+                      )
+                      : GestureDetector(
+                    onTap: ()async {
+                      userData= await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginScreen(),
+                        ),
+                      );
+                      if (userData !=null)
+                        {
+                          isLogin=true;
+                        }
+
+                     setState(() {
+
+                     });
                     },
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 50.0),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 50.0),
                       child: Container(
                         decoration: BoxDecoration(
                           color: Color(0xffcf9a2b),
                           borderRadius: BorderRadius.circular(25),
                         ),
-
-                        child:Padding(
+                        child: Padding(
                           padding: const EdgeInsets.all(10.0),
                           child: Center(
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-
                                 Text(
                                   S.of(context).login_account,
                                   textAlign: TextAlign.center,
                                   style: GoogleFonts.cairo(
                                       fontSize: 15.sp,
                                       fontWeight: FontWeight.bold,
-                                    color: Colors.white
+                                      color: Colors.white),
+                                ),
+                                Padding(
+                                  padding:
+                                  const EdgeInsets.symmetric(
+                                      horizontal: 8.0),
+                                  child: Icon(
+                                    Icons.lock,
+                                    color: Colors.white,
+                                    size: 28,
                                   ),
                                 ),
-
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                  child: Icon(Icons.lock,color: Colors.white,size: 28,),
-                                ),
-
                               ],
                             ),
                           ),
                         ),
-
                       ),
                     ),
                   ),
-                  SizedBox(height: isLogin?20:50.h,),
+                  SizedBox(height: isLogin == true ? 20 : 50.h),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Column(
@@ -227,31 +267,51 @@ class AccountScreen extends StatelessWidget {
                             style: aboutTextStyle(),
                           ),
                         ),
-                        isLogin?Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Text(
-                            S.of(context).logout,
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.cairo(
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.bold,
-                                color: headTitleColor
+                        if (isLogin == true)
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: GestureDetector(
+                              onTap: () async {
+                                // Clear the token from SharedPreferences
+                                SharedPreferences prefs = await SharedPreferences.getInstance();
+                                await prefs.remove('token');
+
+                                // Update isLogin to false and refresh the UI
+                                setState(() {
+                                  isLogin = false; // Set isLogin to false
+                                });
+                              },
+                              child: Text(
+                                S.of(context).logout,
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.cairo(
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.bold,
+                                    color: headTitleColor),
+                              ),
                             ),
                           ),
-                        ):Container(),
-                        SizedBox(height: 15,),
-
+                        SizedBox(height: 15),
                         GestureDetector(
-                          onTap: ()async{
-                            Locale newLocale = Localizations.localeOf(context).languageCode == 'ar'
+                          onTap: () async {
+                            Locale newLocale =
+                            Localizations.localeOf(context)
+                                .languageCode ==
+                                'ar'
                                 ? Locale('en')
                                 : Locale('ar');
-                            await changeLanguage(newLocale);
-                            print(Localizations.localeOf(context).languageCode);
-                            final SharedPreferences prefs = await SharedPreferences.getInstance();
-                            await prefs.setString('locale',Localizations.localeOf(context).languageCode=="ar"?"en":"ar" );
-
-
+                            await widget.changeLanguage(newLocale);
+                            print(Localizations.localeOf(context)
+                                .languageCode);
+                            final SharedPreferences prefs =
+                            await SharedPreferences.getInstance();
+                            await prefs.setString(
+                                'locale',
+                                Localizations.localeOf(context)
+                                    .languageCode ==
+                                    "ar"
+                                    ? "en"
+                                    : "ar");
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -261,7 +321,11 @@ class AccountScreen extends StatelessWidget {
                             child: Padding(
                               padding: const EdgeInsets.all(13.0),
                               child: Text(
-                                Localizations.localeOf(context).languageCode=="ar"?"English":"اللغة العربية",
+                                Localizations.localeOf(context)
+                                    .languageCode ==
+                                    "ar"
+                                    ? "English"
+                                    : "اللغة العربية",
                                 style: GoogleFonts.cairo(
                                   color: Colors.white,
                                   fontSize: 11.sp,
@@ -271,12 +335,9 @@ class AccountScreen extends StatelessWidget {
                             ),
                           ),
                         )
-
                       ],
                     ),
                   ),
-
-
                 ],
               ),
             ),
@@ -285,14 +346,11 @@ class AccountScreen extends StatelessWidget {
       ),
     );
   }
-
-
 }
-TextStyle? aboutTextStyle()
-{
+
+TextStyle? aboutTextStyle() {
   return GoogleFonts.cairo(
       fontSize: 14.sp,
       fontWeight: FontWeight.bold,
-      color: Colors.black
-  );
+      color: Colors.black);
 }

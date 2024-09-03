@@ -1,8 +1,11 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:superjet/colors/style_color.dart';
 import 'package:superjet/generated/l10n.dart';
-import 'package:superjet/services/login_api.dart';
+import 'package:superjet/services/register_api.dart';
 import '../../widgets/alert_widget.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custome_text_filed.dart';
@@ -104,25 +107,32 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                 onTap: ()async {
 
                   if (_formKey.currentState!.validate()) {
-                    isLoading=true;
-                    setState(() {
-                    });
-                    try{
-                      await LoginApi().registerUser(nameCon.text, emailCon.text, passwordCon.text, confirmPassCon.text);
+                    isLoading = true;
+                    setState(() {});
 
-                    }catch(e)
-                  {
-                    showAlertDialog(
-                        context,
-                        e.toString()
-                    );
-                  }
+                    try {
+                      Map<String,dynamic> user = await RegisterApi().registerUser(
+                        nameCon.text,
+                        emailCon.text,
+                        passwordCon.text,
+                        confirmPassCon.text,
+                      );
+
+                      // Save token to shared preferences
+                      SharedPreferences prefs = await SharedPreferences.getInstance();
+                      await prefs.setString('token', user['myToken']);
+                      await prefs.setString('user', jsonEncode(user)); // Use jsonEncode
 
 
+                      Navigator.pop(context);
+                      Navigator.pop(context,user);
 
-                    isLoading=false;
-                    setState(() {
-                    });
+                    } catch (e) {
+                      showAlertDialog(context, e.toString());
+                    }
+
+                    isLoading = false;
+                    setState(() {});
                   }
 
                 },

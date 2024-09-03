@@ -1,12 +1,17 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:superjet/colors/style_color.dart';
 import 'package:superjet/generated/l10n.dart';
+import '../../widgets/alert_widget.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custome_text_filed.dart';
 import 'create_account_screen.dart';
+import 'package:superjet/services/login_api.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({super.key});
@@ -17,14 +22,11 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController emailCon = TextEditingController();
-
   final TextEditingController passwordCon = TextEditingController();
-
   final formKey = GlobalKey<FormState>();
-
   final FocusNode emailFocusNode = FocusNode();
-
   final FocusNode passwordFocusNode = FocusNode();
+  bool isLoading = false; // Loading state
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +58,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   }
                   return null;
                 },
-                // Use FocusNode to manage focus state
                 focusNode: emailFocusNode,
               ),
               // Password field
@@ -72,14 +73,40 @@ class _LoginScreenState extends State<LoginScreen> {
                   }
                   return null;
                 },
-                focusNode: passwordFocusNode, // Add focus node here too
+                focusNode: passwordFocusNode,
               ),
               // Login button
               CustomButton(
+                isLoading: isLoading, // Show loading state
                 text: S.of(context).login,
-                onTap: () {
+                onTap: () async {
                   if (formKey.currentState!.validate()) {
-                    print("usf");
+                    setState(() {
+                      isLoading = true; // Start loading
+                    });
+
+                    try {
+                      // Call your API to log in
+                      Map<String,dynamic> user = await LoginApi().LoginUser(
+                        emailCon.text,
+                        passwordCon.text,
+                      );
+
+                      // Save token to shared preferences
+                      SharedPreferences prefs = await SharedPreferences.getInstance();
+                      await prefs.setString('token', user['myToken']);
+                      await prefs.setString('user', jsonEncode(user));
+
+                      // Pop the screen and return true
+                      Navigator.pop(context, user);
+                    } catch (e) {
+                      // Handle login error
+                      showAlertDialog(context, e.toString());
+                    }
+
+                    setState(() {
+                      isLoading = false; // Stop loading
+                    });
                   }
                 },
               ),
