@@ -91,7 +91,7 @@ class HomeBanner extends StatelessWidget {
                 // Second container
                 GestureDetector(
                   onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => MiniJetScreen(),));
+                    // Navigator.push(context, MaterialPageRoute(builder: (context) => MiniJetScreen(),));
                   },
                   child: Container(
                     width: MediaQuery.of(context).size.width * 0.30,

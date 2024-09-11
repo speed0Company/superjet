@@ -8,11 +8,15 @@ import 'package:superjet/screnns/seat_selection_screen.dart';
 import '../generated/l10n.dart';
 
 class TripsScreen extends StatelessWidget {
-  TripsScreen({required this.fromCity,required this.toCity});
+  TripsScreen({required this.fromCity,required this.toCity,required this.fromCode,required this.toCode,required this.Chaires,required this.SelectedDate,required this.result});
 final String fromCity;
 final String toCity;
-final int numberOfSetsRemaining=10;
-final int numberOfTickets=2;
+final String fromCode;
+final String toCode;
+final String SelectedDate;
+final String Chaires;
+final List<dynamic> result;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,10 +77,14 @@ final int numberOfTickets=2;
            child: ListView.separated(
 
              padding: EdgeInsets.only(bottom: 20.h),
-               itemBuilder: (context, index) =>Padding(
-                 padding:  EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width/6),
+
+               itemBuilder: (context, index) {
+
+               var trip=result[index];
+               return Padding(
+                 padding:  EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width/10),
                  child: Container(
-                   padding:  EdgeInsets.symmetric(horizontal: 15.0.r,vertical: 20.r),
+                   padding:  EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width/18.w,vertical: 20.r),
 
                    decoration: BoxDecoration(
                        borderRadius: BorderRadius.circular(15.r),
@@ -86,7 +94,7 @@ final int numberOfTickets=2;
                    child: Column(
                      children: [
                        Text(
-                         "Royal Star",
+                         trip["bus_type"]??"",
                          style: GoogleFonts.cairo(
                              fontSize: 25.sp,
                              fontWeight: FontWeight.bold,
@@ -95,7 +103,7 @@ final int numberOfTickets=2;
                        ),
                        Image.asset("assets/images/bus_icon.png",height: 70.h,width: 70.w,),
                        Text(
-                         " $numberOfSetsRemaining "+S.of(context).remaining_chairs,
+                         " ${trip['RemainChairs']??0} "+S.of(context).remaining_chairs,
                          style: GoogleFonts.cairo(
                              fontSize: 17.sp,
                              fontWeight: FontWeight.bold,
@@ -107,7 +115,7 @@ final int numberOfTickets=2;
                          mainAxisAlignment: MainAxisAlignment.center,
                          children: [
                            Text(
-                             "2024/11/12",
+                             trip['date']??"",
                              style: GoogleFonts.cairo(
                                  fontSize: 17.sp,
                                  fontWeight: FontWeight.bold,
@@ -125,7 +133,7 @@ final int numberOfTickets=2;
                          mainAxisAlignment: MainAxisAlignment.center,
                          children: [
                            Text(
-                             "3 am",
+                             trip['time']??"",
                              style: GoogleFonts.cairo(
                                  fontSize: 17.sp,
                                  fontWeight: FontWeight.bold,
@@ -142,8 +150,30 @@ final int numberOfTickets=2;
                        Row(
                          mainAxisAlignment: MainAxisAlignment.center,
                          children: [
+                           Flexible(
+                             child: Text(
+                               trip['Trip_Name']??"",
+                               overflow: TextOverflow.ellipsis,
+                               maxLines: 2,
+                               style: GoogleFonts.cairo(
+                                   fontSize: 14.sp,
+                                   fontWeight: FontWeight.bold,
+                                   color: Colors.grey
+                               ),
+                             ),
+                           ),
+                           Spacer(),
+                           Icon(CupertinoIcons.location_solid,color: Colors.red,),
+
+
+                         ],
+                       ),
+                       SizedBox(height: 10.h,),
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.center,
+                         children: [
                            Text(
-                             " ${numberOfTickets} "+S.of(context).tickets,
+                             " ${trip['TripPrice']??""} "+S.of(context).tickets,
                              style: GoogleFonts.cairo(
                                  fontSize: 17.sp,
                                  fontWeight: FontWeight.bold,
@@ -167,7 +197,7 @@ final int numberOfTickets=2;
                              color: headTitleColor,
                            ),
                            child: Padding(
-                             padding: const EdgeInsets.all(8.0),
+                             padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 20),
                              child: Center(
                                child: Text(
                                  S.of(context).reservation,
@@ -189,8 +219,11 @@ final int numberOfTickets=2;
                      ],
                    ),
                  ),
-               ),
-                separatorBuilder:(context, index) => SizedBox(height: 20,) , itemCount: 10),
+               );
+
+
+               },
+                separatorBuilder:(context, index) => SizedBox(height: 20,) , itemCount: result.length),
          )
 
         ],

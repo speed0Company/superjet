@@ -146,7 +146,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "syahia": MessageLookupByLibrary.simpleMessage("الوجهات السياحية"),
         "terms_conditions":
             MessageLookupByLibrary.simpleMessage("الشروط والأحكام"),
-        "tickets": MessageLookupByLibrary.simpleMessage("تذاكر"),
+        "tickets": MessageLookupByLibrary.simpleMessage("جنية"),
         "to": MessageLookupByLibrary.simpleMessage("إلى"),
         "to_private_trip": MessageLookupByLibrary.simpleMessage("رحلة خاصة"),
         "to_setting": MessageLookupByLibrary.simpleMessage("الإعدادات"),

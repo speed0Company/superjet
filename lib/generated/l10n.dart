@@ -260,10 +260,10 @@ class S {
     );
   }
 
-  /// `Tickets`
+  /// `EGP`
   String get tickets {
     return Intl.message(
-      'Tickets',
+      'EGP',
       name: 'tickets',
       desc: '',
       args: [],
