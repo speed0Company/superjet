@@ -32,23 +32,23 @@ class _HomeScreenState extends State<HomeScreen> {
         onTap: ()async {
           String contact = "+201220840565";
           String text = '';
-          String androidUrl = "https://api.whatsapp.com/send/?phone=${contact}&text=${text}";
-          String iosUrl = "https://api.whatsapp.com/send/?phone=${contact}&text=${text}";
-          String webUrl = 'https://api.whatsapp.com/send/?phone=${contact}&text=${text}';
+          String url = "https://api.whatsapp.com/send/?phone=${contact}&text=${text}";
+          // String iosUrl = "https://api.whatsapp.com/send/?phone=${contact}&text=${text}";
+          // String webUrl = 'https://api.whatsapp.com/send/?phone=${contact}&text=${text}';
 
           try {
             if (Platform.isIOS) {
-              if (await canLaunchUrl(Uri.parse(iosUrl))) {
-          await launchUrl(Uri.parse(iosUrl));
+              if (await canLaunchUrl(Uri.parse(url))) {
+          await launchUrl(Uri.parse(url));
           }
           } else {
-          if (await canLaunchUrl(Uri.parse(androidUrl))) {
-          await launchUrl(Uri.parse(androidUrl));
+          if (await canLaunchUrl(Uri.parse(url))) {
+          await launchUrl(Uri.parse(url));
           }
           }
           } catch(e) {
           print(e.toString());
-          await launchUrl(Uri.parse(webUrl), mode: LaunchMode.externalApplication);
+          await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
           }
         },
         child: Image.asset("assets/images/whatsapp_icon.png", width: 50, height: 50),
